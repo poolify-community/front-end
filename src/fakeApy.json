@@ -1,0 +1,20 @@
+{
+    "poolify-maxi": {
+      "vaultApr": 0.06635645882510621,
+      "compoundingsPerYear": 2190,
+      "beefyPerformanceFee": 0.045,
+      "vaultApy": 0.06860648964023941,
+      "lpFee": 0.005,
+      "tradingApr": 0.020063527393574837,
+      "totalApy": 0.0900465052180881
+    },
+    "poolify-bnb": {
+      "vaultApr": 0.11620822210562165,
+      "compoundingsPerYear": 2190,
+      "beefyPerformanceFee": 0.045,
+      "vaultApy": 0.12322626604735576,
+      "lpFee": 0.005,
+      "tradingApr": 0.13531521058404886,
+      "totalApy": 0.2752158647710887
+    }
+  }
