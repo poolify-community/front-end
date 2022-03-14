@@ -27,7 +27,7 @@ export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone
 
     const balance   = byDecimals(tokens[vault.token].tokenBalance, vault.tokenDecimals);
     const deposited = byDecimals(
-      new BigNumber(tokens[vault.earnedToken].tokenBalance).multipliedBy(new BigNumber(vault.isPoolifyStaking?vault.pricePerFullShare:1)),
+      new BigNumber(tokens[vault.vaultToken].tokenBalance).multipliedBy(new BigNumber(vault.isPoolifyStaking?vault.pricePerFullShare:1)),
       vault.tokenDecimals
     );
 
@@ -46,7 +46,7 @@ export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone
     //console.log('balance',byDecimals(tokens[vault.token].tokenBalance, vault.tokenDecimals).toFormat());
     //console.log('balance2',tokens[vault.token].tokenBalance);
     //console.log('balance3',tokenBalance(tokens[vault.token].symbol).toFormat());
-    //console.log('shareBalance',byDecimals(tokens[vault.earnedToken].tokenBalance, vault.tokenDecimals).toFormat());
+    //console.log('shareBalance',byDecimals(tokens[vault.vaultToken].tokenBalance, vault.tokenDecimals).toFormat());
     //console.log('priceParShare',vault.pricePerFullShare);
     //console.log('deposited',deposited.toFormat())
     //console.groupEnd();

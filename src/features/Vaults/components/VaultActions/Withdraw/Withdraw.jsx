@@ -90,13 +90,13 @@ export default function({vault, index, sharesBalance,...props}){
     /** Effects **/
     useEffect(() => {
         const allowance = new BigNumber(
-          tokens[vault.earnedToken].allowance[withdrawSettings.withdrawAddress]
+          tokens[vault.vaultToken].allowance[withdrawSettings.withdrawAddress]
         );
         setWithdrawSettings(prevState => ({
           ...prevState,
           isNeedApproval: prevState.isZap && allowance.isZero(),
         }));
-    }, [vault.earnedToken, tokens, withdrawSettings.withdrawAddress]);
+    }, [vault.vaultToken, tokens, withdrawSettings.withdrawAddress]);
 
     const resetInput = () => {
       setWithdrawSettings(prevState => ({
@@ -168,7 +168,7 @@ export default function({vault, index, sharesBalance,...props}){
                 <Flex alignContent={'center'}>
                     <Text paddingRight={'5px'}>
                     {byDecimals(
-                        new BigNumber(tokens[vault.earnedToken].tokenBalance).multipliedBy(new BigNumber(vault.isPoolifyStaking?vault.pricePerFullShare:1)),
+                        new BigNumber(tokens[vault.vaultToken].tokenBalance).multipliedBy(new BigNumber(vault.isPoolifyStaking?vault.pricePerFullShare:1)),
                         vault.tokenDecimals
                      ).toFormat(4)}{' '}
                     </Text>

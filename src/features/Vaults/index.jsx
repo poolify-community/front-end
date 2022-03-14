@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react';
-import {useMoralis} from 'react-moralis';
 import {
   Box,
   Flex,
@@ -17,7 +16,6 @@ import Header from 'components/Header/Header';
 import Vaults from 'features/Vaults/components/Vaults/Vaults';
 import Filters from 'features/Vaults/components/Filters/Filters';
 import AllRewards from 'features/Vaults/components/AllRewards/AllRewards';
-import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
 
 import { useConnectWallet } from 'libs/hooks/useConnector';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from './redux/hooks';

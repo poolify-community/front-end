@@ -11,9 +11,9 @@ pools.forEach(
       token,
       tokenDecimals,
       tokenAddress,
-      earnedToken,
-      earnContractAddress,
-      earnedTokenAddress,
+      vaultToken,
+      vaultContractAddress,
+      vaultTokenAddress,
       withdrawalFee,
       depositFee,
     },
@@ -22,6 +22,7 @@ pools.forEach(
     if (!withdrawalFee) pools[i].withdrawalFee = '0.1%';
     if (!depositFee) pools[i].depositFee = '0%';
 
+    /** Tokens (External) **/
     tokens[token] = {
       symbol: token,
       decimals: tokenDecimals,
@@ -29,16 +30,18 @@ pools.forEach(
       tokenBalance: 0,
       allowance: {
         ...tokens[token]?.allowance,
-        [earnContractAddress]: tokenAddress ? 0 : Infinity,
+        [vaultContractAddress]: tokenAddress ? 0 : Infinity,
       },
     };
-    tokens[earnedToken] = {
-      symbol: earnedToken,
+
+    /** Tokens (Internal, vault tokens) **/
+    tokens[vaultToken] = {
+      symbol: vaultToken,
       decimals: 18,
-      tokenAddress: earnedTokenAddress,
+      tokenAddress: vaultTokenAddress,
       tokenBalance: 0,
       allowance: {
-        [earnContractAddress]: 0,
+        [vaultContractAddress]: 0,
       },
     };
   }

@@ -26,7 +26,7 @@ const Center = (
   <Routes>
       <Route path="/"  element={<Dashboard />}/>
       {/* <Route path="/vaults"  element={<Vaults />}/> */}
-      <Route path="/vaults"  element={<Vaults />}/>
+      <Route path="/vaults/"  element={<Vaults />}/>
       {/* <Route path="/nft-pool"  element={<CrowdNFT />}/> */}
   </Routes>
 );

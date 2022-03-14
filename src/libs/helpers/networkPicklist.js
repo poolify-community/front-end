@@ -6,6 +6,12 @@ export const allNetworks = [
       hash: '/bsc',
     },
     {
+      name: 'BSC Test Net',
+      asset: 'BSC',
+      id: 97,
+      hash: '/testbsc',
+    },
+    {
       name: 'local',
       asset: 'BSC',
       id: 1337,
@@ -93,7 +99,7 @@ export const allNetworks = [
   ];
   
   const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));
-  
+  window.network = network;
   if (!network) {
     window.location.hash = allNetworks[0].hash;
     window.location.reload();

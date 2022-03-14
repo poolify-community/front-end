@@ -10,6 +10,17 @@ export const networkSettings = {
       rpcUrls: ['https://bsc-dataseed.binance.org'],
       blockExplorerUrls: ['https://bscscan.com/'],
     },
+    97: {
+      chainId: `0x${parseInt(97, 10).toString(16)}`,
+      chainName: 'BSC Testnet',
+      nativeCurrency: {
+        name: 'Binance Coin',
+        symbol: 'BNB',
+        decimals: 18,
+      },
+      rpcUrls: ['https://bsc-dataseed.binance.org'],
+      blockExplorerUrls: ['https://testnet.bscscan.com/'],
+    },
     1337: {
         chainId: `0x${parseInt(1337, 10).toString(16)}`,
         chainName: 'Local',
@@ -18,7 +29,7 @@ export const networkSettings = {
           symbol: 'BNB',
           decimals: 18,
         },
-        rpcUrls: ['https://bsc-dataseed.binance.org'],
+        rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545'],
         blockExplorerUrls: ['https://bscscan.com/'],
     },
   };

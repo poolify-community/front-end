@@ -42,7 +42,8 @@ export function fetchVaultsData({ web3, pools }) {
 
 
       const vaultCalls = pools.map(pool => {
-        const vault = new web3.eth.Contract(vaultABI, pool.earnedTokenAddress);
+        console.log('>    pool',pool);
+        const vault = new web3.eth.Contract(vaultABI, pool.vaultTokenAddress);
         return {
           pricePerFullShare: vault.methods.getPricePerFullShare(),
           tvl: vault.methods.balance(),

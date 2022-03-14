@@ -14,7 +14,6 @@ import {fetchBalance,fetchAllowance} from "libs/web3";
 // TODO: Replace with Multi Call
 
 export function fetchBalances({ address, web3, tokens }) {
-  console.log('fetchBalances',fetchBalances);
   return dispatch => {
     if (!(address && web3)) return;
 
@@ -27,6 +26,8 @@ export function fetchBalances({ address, web3, tokens }) {
         var actions_allowances = [];
 
         Object.entries(tokens).forEach(([symbol, token]) => {
+          console.log('token.tokenAddress',token.tokenAddress);
+          console.log('address',address);
             const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
 
             actions_balances.push({

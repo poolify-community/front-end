@@ -10,7 +10,7 @@ import Links from './Links/Links';
 
 export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone,fetchApysDone,...props}){
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
-    const sharesBalance = new BigNumber(tokens[vault.earnedToken].tokenBalance); // Vault Token Balance, might need to change the name
+    const sharesBalance = new BigNumber(tokens[vault.vaultToken].tokenBalance); // Vault Token Balance, might need to change the name
 
 
 

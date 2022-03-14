@@ -6,7 +6,7 @@ import {
   Flex,
   Text,
   Img,
-  Grid
+  SimpleGrid
 } from '@chakra-ui/react';
 import { useModal } from 'providers/ModalProvider';
 
@@ -45,6 +45,7 @@ const NetworksToggle = memo(function () {
   
   const handleNetworkClick = useCallback(
     network => {
+      console.log('----> network',network);
       if (network.id === currentNetwork.id) {
         handleClose();
       } else {
@@ -67,8 +68,7 @@ const NetworksToggle = memo(function () {
       pb={2}
       mb={3}
     >
-      <Flex justifyContent="space-between" alignItems="center" mb={3}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+      <SimpleGrid minChildWidth='120px' spacing='40px'>
           {allNetworks.map((network, key) => (
             <Box
               _hover={{backgroundColor:'#bdbdbd',cursor:'pointer'}}
@@ -82,8 +82,7 @@ const NetworksToggle = memo(function () {
               <Text style={{ fontSize: "14px" }}>{network.name}</Text>
             </Box>
           ))}
-        </div>
-      </Flex>
+        </SimpleGrid>
     </Box>
   );
     
