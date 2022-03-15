@@ -3,11 +3,13 @@ import BigNumber from 'bignumber.js';
 const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
 
 export const formatApy = (apy, dp = 2) => {
+  console.log('formatApy',new BigNumber(apy).toFormat());
   if (!apy) return `???`;
 
   apy *= 100;
 
   const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
+  console.log('order',Math.floor(Math.log10(BigNumber(apy)) / 3));
   if (order >= units.length - 1) return `🔥`;
 
   const num = apy / 1000 ** order;

@@ -80,7 +80,7 @@ export default function() {
       }
       body={
         <Stack w="100%">
-            <Filters />
+            {/* <Filters /> */}
             <Box h="10px" />
             <Vaults 
               vaults={pools}

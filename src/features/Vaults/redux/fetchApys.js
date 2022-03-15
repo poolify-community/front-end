@@ -16,7 +16,7 @@ export function fetchApys() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      /*
+      
       const doRequest = axios.get(`${apiUrl}/apy/breakdown?_=${cacheBuster}`);
 
       doRequest.then(
@@ -35,13 +35,6 @@ export function fetchApys() {
           reject(err);
         }
       );
-      */
-
-      dispatch({
-          type:VAULT_FETCH_APYS_SUCCESS,
-          data:fakeApy
-      });
-      resolve();
     });
   };
 }

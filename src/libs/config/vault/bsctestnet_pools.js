@@ -1,7 +1,7 @@
 import tokens,{TokenSymbol} from 'config/tokens';
 export const bscTestNetPools = [
     {
-        id: "poolify-maxi",
+        id: "plfy-maxi-v2",
         logo: "assets/tokens/poolify.png",
         name: "POOLIFY Maxi",
         token: "PLFY",

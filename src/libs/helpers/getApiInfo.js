@@ -1,4 +1,4 @@
-export const apiUrl = process.env.REACT_APP_API_URL || 'https://poolify-api-testnet.herokuapp.com/';
+export const apiUrl = process.env.REACT_APP_API_URL || 'http://api.poolify.finance';
 
 // Time-based cache buster
 export const getApiCacheBuster = () => {
