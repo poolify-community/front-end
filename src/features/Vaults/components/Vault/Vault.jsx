@@ -1,15 +1,12 @@
 import {
-  Box,
   Flex,
   HStack,
-  useColorModeValue,
   Spacer,
   Grid,
   Divider,
   AccordionButton,AccordionIcon,AccordionPanel,AccordionItem
 } from "@chakra-ui/react";
 import { useBreakpointValue } from '@chakra-ui/media-query';
-import { useMoralis } from "react-moralis";
 
 
 import Card from 'components/Card/Card';
@@ -26,7 +23,7 @@ import TitleSection from "../VaultSummary/TitleSection";
 
 
 export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone,fetchApysDone, ...props }) {
-    const isOneLineMode = useBreakpointValue({ base: false, xl: true });
+    const isOneLineMode = useBreakpointValue({ base: false, lg: true });
     const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
     const shouldExpand = connected || !isOneLineMode;
     //console.log('isOneLineMode',isOneLineMode);

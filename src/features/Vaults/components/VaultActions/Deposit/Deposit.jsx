@@ -23,7 +23,7 @@ import { useFetchBalances,useFetchApproval,useFetchDeposit,useFetchZapEstimate,u
 import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
 
 
-export default function({vault,...props}){
+const deposit = function({vault,...props}){
     const { t } = useTranslation();
     const {DisplayNotification} = useNotifier();
     const { web3, address } = useConnectWallet();
@@ -62,10 +62,10 @@ export default function({vault,...props}){
         token: eligibleTokens[0],
         amount: new BigNumber(0),
         input: '0.0',
-        vaultAddress: vault.earnContractAddress,
-        depositAddress: vault.earnContractAddress,
+        vaultAddress: vault.vaultContractAddress,
+        depositAddress: vault.vaultContractAddress,
         isNeedApproval: new BigNumber(
-          tokens[eligibleTokens[0].symbol].allowance[vault.earnContractAddress]
+          tokens[eligibleTokens[0].symbol].allowance[vault.vaultContractAddress]
         ).isZero(),
         slippageTolerance: 0.01,
         swapAmountOut: vault.zapEstimate?.swapAmountOut,
@@ -167,6 +167,7 @@ export default function({vault,...props}){
     };
 
     const depositAssets = deposit => {
+        console.log('deposit',deposit);
         if(vault.depositsPaused){
           console.error('Deposits paused!');
           return;
@@ -207,27 +208,28 @@ export default function({vault,...props}){
             contractAddress: deposit.vaultAddress,
             DisplayNotification
           };
+          console.log('depositArgs',depositArgs);
           
           if(vault.tokenAddress){
             fetchDeposit(depositArgs)
-              .then(() => {
+            .then(() => {
                 DisplayNotification({message:t('Vault-DepositSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
-              })
-              .catch(error =>
+            })
+            .catch(error =>
                 DisplayNotification({message:t('Vault-DepositError', { error }),status: 'error' })
-              );
+            );
           }else{
             fetchDepositBnb(depositArgs)
-              .then(() => {
+            .then(() => {
                 DisplayNotification({message:t('Vault-DepositSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
-              })
-              .catch(error =>
+            })
+            .catch(error =>
                 DisplayNotification({message:t('Vault-DepositError', { error }),status: 'error' })
-              );
+            );
           }
         }
       };
@@ -298,8 +300,8 @@ export default function({vault,...props}){
                     <Button colorScheme='blue' marginTop={'8px'} size='lg' width={'100%'}
                         disabled={
                             vault.depositsPaused ||
-                            fetchZapEstimatePending[vault.earnContractAddress] ||
-                            fetchDepositPending[vault.earnContractAddress] ||
+                            fetchZapEstimatePending[vault.vaultContractAddress] ||
+                            fetchDepositPending[vault.vaultContractAddress] ||
                             depositSettings.amount.isZero() ||
                             tokenBalance(depositSettings.token.symbol).isZero()
                         }
@@ -315,6 +317,8 @@ export default function({vault,...props}){
         </Flex>
     )
 }
+
+export default deposit;
 
 /*
 

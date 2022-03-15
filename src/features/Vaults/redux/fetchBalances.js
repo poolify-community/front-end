@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import BigNumber from 'bignumber.js';
 import { useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
@@ -26,10 +27,10 @@ export function fetchBalances({ address, web3, tokens }) {
         var actions_allowances = [];
 
         Object.entries(tokens).forEach(([symbol, token]) => {
-          console.log('token.tokenAddress',token.tokenAddress);
-          console.log('address',address);
+          //console.log('token.tokenAddress',token.tokenAddress);
+          //console.log('address',address);
             const tokenContract = new web3.eth.Contract(erc20ABI, token.tokenAddress);
-
+            
             actions_balances.push({
               type:'balance',
               balance: tokenContract.methods.balanceOf(address),
@@ -45,7 +46,7 @@ export function fetchBalances({ address, web3, tokens }) {
               });
             });
         })
-
+        
         let actions = actions_balances.concat(actions_allowances);
         Promise.all(actions.map(async (action) => {
           switch(action.type){
@@ -56,7 +57,6 @@ export function fetchBalances({ address, web3, tokens }) {
                 symbol:action.symbol,
                 balance:balance
               }
-            break;
             case 'allowance':
               var allowance = await action.allowance.call({ from: address });
               return {
@@ -65,7 +65,6 @@ export function fetchBalances({ address, web3, tokens }) {
                 spender:action.spender,
                 allowance:allowance
               }
-            break;
           }
           
          
@@ -74,7 +73,7 @@ export function fetchBalances({ address, web3, tokens }) {
             var balanceResults = [];
             var allowanceResults = [];
             results.forEach(res => {
-                if(res.type == 'balance'){
+                if(res.type === 'balance'){
                   balanceResults.push(res);
                 }else{
                   allowanceResults.push(res);
@@ -143,7 +142,7 @@ export function useFetchBalances() {
 
   const tokenBalance = tokenSymbol => {
     let res = byDecimals(tokens[tokenSymbol]?.tokenBalance || 0, tokens[tokenSymbol].decimals);
-    console.log('tokens[tokenSymbol]',tokens[tokenSymbol],res.toFormat());
+    //console.log('tokens[tokenSymbol]',tokens[tokenSymbol],res.toFormat());
     return res
   };
 
@@ -187,8 +186,8 @@ export function reducer(state, action) {
         fetchBalancesDone: true,
         fetchBalancesPending: false,
       };
-      console.log('formatted',formatted);
-      console.log('newAndUpdatedTokens',newAndUpdatedTokens);
+      //console.log('formatted',formatted);
+      //console.log('newAndUpdatedTokens',newAndUpdatedTokens);
 
       return formatted;
 

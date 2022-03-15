@@ -6,7 +6,7 @@ import {
     Heading,
 } from "@chakra-ui/react";
 
-export default function({value,...props}){
+const deposited = function({value,...props}){
     return (
         <GridItem w='100%' h='70px'>
             <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
@@ -18,3 +18,5 @@ export default function({value,...props}){
         </GridItem>
       );
 }
+
+export default deposited;

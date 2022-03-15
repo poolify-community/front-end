@@ -14,7 +14,7 @@ import Rewards from '../Rewards/Rewards';
 import {MetamaskIcon} from 'components/Icons/Icons';
 import { registerToken } from 'libs/web3';
 
-export default function({vault,links}){
+const Links = function({vault,links}){
 
     const addToMetamask = () => {
         registerToken(vault.tokenAddress, vault.token, vault.tokenDecimals)
@@ -23,7 +23,7 @@ export default function({vault,links}){
     return (
         <Flex flexBasis={{base:'unset',md:'230px'}} alignItems={'flex-start'} justifyContent={'flex-start'} h='inherit' paddingBottom={'50px'}>
                 <Flex marginLeft={'15px'} flexDirection={'column'} alignItems={'flex-start'}>
-                    <Link href={'#'} isExternal variant={'poolify-links'}>
+                    <Link href={vault.vaultExplorer} isExternal variant={'poolify-links'}>
                         See contract <ExternalLinkIcon mx='2px' />
                     </Link>
                     <Link href={vault.buyTokenUrl} isExternal variant={'poolify-links'}>
@@ -51,3 +51,5 @@ export default function({vault,links}){
         </Flex>
       );
 }
+
+export default Links;

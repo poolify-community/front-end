@@ -7,7 +7,7 @@ export const bscTestNetPools = [
         token: "PLFY",
         tokenDescription: "Poolify.Finance",
         tokenAddress: "0xCCa640c3AC0DaE0F66bDf25C3049992B82B7dE1c",
-        tokenExplorer: "https://testnet.bscscan.com/0xCCa640c3AC0DaE0F66bDf25C3049992B82B7dE1c",
+        tokenExplorer: "https://testnet.bscscan.com/address/0xCCa640c3AC0DaE0F66bDf25C3049992B82B7dE1c",
         tokenDecimals: 18,
         pricePerFullShare: 1,
         tvl: 0,
@@ -32,7 +32,7 @@ export const bscTestNetPools = [
         vaultToken:"bucketPLFY",
         vaultTokenAddress: "0x95EAF0156C05df0fE83859e466ea8877090ac898",
         vaultContractAddress: "0x95EAF0156C05df0fE83859e466ea8877090ac898",
-        vaultExplorer: "https://testnet.bscscan.com/0x95EAF0156C05df0fE83859e466ea8877090ac898",
+        vaultExplorer: "https://testnet.bscscan.com/address/0x95EAF0156C05df0fE83859e466ea8877090ac898",
         tokenA:TokenSymbol.POOLIFY,
         tokenB:null,//TokenSymbol.BNB,
   }

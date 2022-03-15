@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import { getNetworkPools } from 'libs/helpers/getNetworkData';
 import { apiUrl, getApiCacheBuster } from 'libs/helpers/getApiInfo';
-import fakeLpPrices from 'fakeLpPrices';
-import fakePrices from 'fakePrices';
+//import fakeLpPrices from 'fakeLpPrices';
+//import fakePrices from 'fakePrices';
 var pools = getNetworkPools();
 
 const CACHE_TIMEOUT_MS = 1 * 60 * 1000; // 1 minute(s)
@@ -29,8 +29,6 @@ function maybeUpdateCache() {
 
 const fetchTokens = async () => {
   const cacheBuster = getApiCacheBuster();
-  // temporary
-  return fakePrices;
   try {
     const response = await axios.get(`${apiUrl}/prices?_=${cacheBuster}`);
     return response.data;
@@ -42,8 +40,6 @@ const fetchTokens = async () => {
 
 const fetchLPs = async () => {
   const cacheBuster = getApiCacheBuster();
-  // temporary
-  return fakeLpPrices;
   try {
     const response = await axios.get(`${apiUrl}/lps?_=${cacheBuster}`);
     return response.data;

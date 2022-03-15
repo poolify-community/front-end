@@ -24,7 +24,7 @@ import { useNotifier } from 'libs/helpers/notifier';
 import { useFetchBalances,useFetchWithdraw,useFetchZapEstimate } from 'features/Vaults/redux/hooks';
 import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
 
-export default function({vault, index, sharesBalance,...props}){
+const withdraw = function({vault, index, sharesBalance,...props}){
     const { t } = useTranslation();
     const { DisplayNotification } = useNotifier();
     const { web3, address } = useConnectWallet();
@@ -205,3 +205,5 @@ export default function({vault, index, sharesBalance,...props}){
         </Flex>
     )
 }
+
+export default withdraw;
