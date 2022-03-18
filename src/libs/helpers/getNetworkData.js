@@ -246,7 +246,7 @@ export const getNetworkConnectors = t => {
 
 export const getNetworkTxUrl = networkTxUrls[window.REACT_APP_NETWORK_ID];
 export const getNetworkFriendlyName = (networkId = window.REACT_APP_NETWORK_ID) => networkFriendlyName[networkId];
-export const getNetworkBuyUrl = (networkId = window.REACT_APP_NETWORK_ID) => networkBuyUrls[networkId];
+//export const getNetworkBuyUrl = (networkId = window.REACT_APP_NETWORK_ID) => networkBuyUrls[networkId];
 export const getNetworkAppUrl = (networkId = window.REACT_APP_NETWORK_ID) =>
   window.location.protocol +
   '//' +
