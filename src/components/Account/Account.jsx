@@ -72,10 +72,10 @@ function Account() {
   }, [setWeb3Modal]);
 
   useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
+    if (web3Modal && (web3Modal.cachedProvider)) {
       connectWallet(web3Modal);
     }
-  }, [web3Modal, connectWallet]);
+  }, [web3Modal, connectWallet,connected]);
 
   const connectWalletCallback = useCallback(() => {
     connectWallet(web3Modal);

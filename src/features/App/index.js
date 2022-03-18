@@ -49,33 +49,6 @@ var routes = [
 function App() {
   
 
-  const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
-  const { disconnectWallet } = useDisconnectWallet();
-  const [web3Modal, setModal] = useState(null);
-
-
-  initializePriceCache();
-  /*
-  useEffect(() => {
-      const connectorId = window.localStorage.getItem("connectorId");
-      console.log('connectorId',connectorId,isAuthenticated);
-      if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
-        enableWeb3({ provider: connectorId });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthenticated, isWeb3Enabled]);
-  */
-
-  useEffect(() => {
-    setModal(createWeb3Modal());
-  }, [setModal]);
-
-  useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
-      console.log('web3Modal.cachedProvider',web3Modal.cachedProvider);
-      console.log('window.ethereum',window.ethereum);
-      connectWallet(web3Modal);
-    }
-  }, [web3Modal, connectWallet]);
 
   return (
     <AppLayout 
