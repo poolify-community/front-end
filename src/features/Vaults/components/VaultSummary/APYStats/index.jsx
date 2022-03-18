@@ -40,7 +40,7 @@ export default function({apy,...props}){
     );
 
   
-    console.log('formatted',formatted);
+    //console.log('formatted',formatted);
 
 
     return (

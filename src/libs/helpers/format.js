@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 const units = ['', 'k', 'M', 'B', 'T', 'Q', 'Q', 'S', 'S'];
 
 export const formatApy = (apy, dp = 2) => {
-  console.log('formatApy',new BigNumber(apy).toFormat());
+  //console.log('formatApy',new BigNumber(apy).toFormat());
   if (!apy) return `???`;
 
   apy *= 100;

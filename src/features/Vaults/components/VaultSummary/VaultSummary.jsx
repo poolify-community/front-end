@@ -34,7 +34,7 @@ export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone
     );
 
     const apy = apys[vault.id] || { totalApy: 0 };
-    console.log('apy',apy);
+    //console.log('apy',apy);
 
     const balanceUsd    = balance   > 0 && fetchVaultsDataDone ? formatTvl(balance, vault.oraclePrice) : '';
     const depositedUsd  = deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, vault.oraclePrice, false) : '';

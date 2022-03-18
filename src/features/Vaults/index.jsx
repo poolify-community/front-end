@@ -38,7 +38,7 @@ export default function() {
 
   useEffect(() => {
     fetchApys();
-    console.log('apys',apys);
+    //console.log('apys',apys);
     const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
     return () => clearInterval(id);
   }, [fetchApys]);

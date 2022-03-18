@@ -20,7 +20,7 @@ export const bscTestNetPools = [
         assets: [
             "PLFY"
         ],
-        stratType: "SingleStake",
+        stratType: "Single Asset",
         withdrawalFee: "0.05%",
         buyTokenUrl: "https://app.1inch.io/#/56/swap/BNB/PLFY",
         createdAt: 1606511757,
@@ -35,5 +35,42 @@ export const bscTestNetPools = [
         vaultExplorer: "https://testnet.bscscan.com/address/0x95EAF0156C05df0fE83859e466ea8877090ac898",
         tokenA:TokenSymbol.POOLIFY,
         tokenB:null,//TokenSymbol.BNB,
+  },
+  {
+    id: "cakev2-PLFY-BNB",
+    name: "PLFY-BNB LP",
+    token: "PLFY-BNB LP",
+    tokenDescription: "PancakeSwap - PLFY-BNB Liquidity",
+    tokenAddress: "0x976a7753c88EBFD2d3154B8764a0176769e5a372",
+    tokenDecimals: 18,
+    tokenDescriptionUrl: "#",
+    pricePerFullShare: 1,
+    tvl: 0,
+    oracle: "lps",
+    oracleId: "cakev2-plfy-bnb",
+    oraclePrice: 0,
+    depositsPaused: false,
+    status: "active",
+    platform: "PancakeSwap",
+    assets: ["PLFY", "BNB"],
+    risks: ["COMPLEXITY_LOW", "BATTLE_TESTED", "MCAP_MEDIUM", "AUDIT", "CONTRACTS_VERIFIED"],
+    stratType: "Strat LP",
+    addLiquidityUrl:
+      "https://pancake.kiemtienonline360.com/add/0xCCa640c3AC0DaE0F66bDf25C3049992B82B7dE1c/0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+    buyTokenUrl:
+      "https://pancake.kiemtienonline360.com/swap?outputCurrency=0x12BB890508c125661E03b09EC06E404bc9289040",
+    createdAt: 1647560542,
+    isPoolifyStaking: false,
+    categories: [
+        "core",
+        "SingleAsset"
+    ],
+    vaultToken: "bucketCakeV2PLFY-BNB",
+    vaultTokenAddress: "0xe5370AC4222Be4C6E3009290Cc5E6284523FBF6B",
+    vaultContractAddress: "0xe5370AC4222Be4C6E3009290Cc5E6284523FBF6B",
+    vaultExplorer: "https://testnet.bscscan.com/address/0xe5370AC4222Be4C6E3009290Cc5E6284523FBF6B",
+    rewardManagerPoolIndex:1,
+    tokenA:TokenSymbol.POOLIFY,
+    tokenB:TokenSymbol.BNB,
   }
 ];

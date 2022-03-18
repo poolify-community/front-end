@@ -45,8 +45,8 @@ export function fetchVaultsData({ web3, pools }) {
         console.log('>    pool',pool);
         const vault = new web3.eth.Contract(vaultABI, pool.vaultTokenAddress);
         return {
-          pricePerFullShare: vault.methods.getPricePerFullShare(),
-          tvl: vault.methods.balance(),
+          pricePerFullShare:pool.isPoolifyStaking?vault.methods.getPricePerFullShare():vault.methods.getPricePerFullShare_want(),
+          tvl: pool.isPoolifyStaking?vault.methods.balance():vault.methods.balance_want(),
         };
       });
 
