@@ -71,12 +71,6 @@ function Account() {
     setWeb3Modal(createWeb3Modal());
   }, [setWeb3Modal]);
 
-  useEffect(() => {
-    if (web3Modal && (web3Modal.cachedProvider)) {
-      connectWallet(web3Modal);
-    }
-  }, [web3Modal, connectWallet,connected]);
-
   const connectWalletCallback = useCallback(() => {
     connectWallet(web3Modal);
   }, [web3Modal, connectWallet]);

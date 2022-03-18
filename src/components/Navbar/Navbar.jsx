@@ -11,26 +11,12 @@ import {
   VStack,
   IconButton,
   CloseButton,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  Text,
-  Link,
-  Tabs,
-  TabList,
-  Tab,
   Spacer,
   useBreakpointValue
 } from "@chakra-ui/react";
 import {
   AiOutlineMenu,
-  AiFillHome,
-  AiOutlineInbox,
-  AiOutlineSearch,
-  AiFillBell,
 } from "react-icons/ai";
-import { BsFillCameraVideoFill } from "react-icons/bs";
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Account from 'components/Account/Account';
 import { NavLink, useLocation } from "react-router-dom";
 import NetworksToggle from 'components/NetworksToggle/NetworksToggle';

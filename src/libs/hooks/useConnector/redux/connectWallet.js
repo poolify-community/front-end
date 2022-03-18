@@ -44,6 +44,7 @@ export function connectWallet(web3Modal) {
         });
         provider.on('chainChanged', async chainId => {
           const networkId = web3.utils.isHex(chainId) ? web3.utils.hexToNumber(chainId) : chainId;
+          console.log('chainChanged',networkId);
           dispatch({ type: HOME_NETWORK_CHANGED, data: networkId });
         });
       };
@@ -56,6 +57,8 @@ export function connectWallet(web3Modal) {
         // Trust provider returns an incorrect chainId for BSC.
         networkId = 56;
       }
+
+      console.log('HOME_CONNECT_WALLET_SUCCESS');
 
       dispatch({ type: HOME_CONNECT_WALLET_SUCCESS, data: { web3, address, networkId } });
     } catch (error) {
