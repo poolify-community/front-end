@@ -23,7 +23,7 @@ import { useFetchBalances,useFetchApproval,useFetchDeposit,useFetchZapEstimate,u
 import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
 
 
-const deposit = function({vault,...props}){
+const Deposit = function({vault,...props}){
     const { t } = useTranslation();
     const {DisplayNotification} = useNotifier();
     const { web3, address } = useConnectWallet();
@@ -318,7 +318,7 @@ const deposit = function({vault,...props}){
     )
 }
 
-export default deposit;
+export default Deposit;
 
 /*
 

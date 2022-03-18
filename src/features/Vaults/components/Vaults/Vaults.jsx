@@ -49,6 +49,8 @@ export default function VaultList({vaults,tokens,apys,fetchBalancesDone,fetchVau
          defaultIndex={[0]}
         */
 
+        const _headingColor = useColorModeValue('tertiary.100', 'tertiary.600');
+
       return (
             <Accordion  allowMultiple={true} allowToggle={true} width={'inherit'}>
                 <Flex margin="20px" justifyItems={'center'} justifyContent={'space-between'}>
@@ -69,7 +71,7 @@ export default function VaultList({vaults,tokens,apys,fetchBalancesDone,fetchVau
                     <Center>
                         <Heading
                             size="md"
-                            color={useColorModeValue('tertiary.100', 'tertiary.600')}
+                            color={_headingColor}
                         >
                             No vaults to display.
                         </Heading>
@@ -94,7 +96,7 @@ export default function VaultList({vaults,tokens,apys,fetchBalancesDone,fetchVau
                     <Center>
                         <Heading
                             size="md"
-                            color={useColorModeValue('tertiary.100', 'tertiary.600')}
+                            color={_headingColor}
                         >
                             No vaults to display.
                         </Heading>

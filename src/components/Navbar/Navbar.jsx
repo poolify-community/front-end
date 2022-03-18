@@ -51,8 +51,8 @@ export default function Navbar(props) {
     return location.pathname === routeName ? "active" : "";
   };
 
-  const displayButtons = (routes) => {
-    //console.log('displayButtons --> ');
+  const DisplayButtons = (routes) => {
+    //console.log('DisplayButtons --> ');
     let activeColor   = useColorModeValue("poolify.400", "white");
     let inactiveColor = useColorModeValue("gray.600", "gray.500");
 
@@ -106,7 +106,7 @@ export default function Navbar(props) {
             <Account />
           </Flex>
           <Flex width={'100%'} alignItems={'center'} flexDirection={'column'} pt={'50px'}>
-            {displayButtons(props.routes)}
+            {DisplayButtons(props.routes)}
           </Flex>
         </Flex>
 
@@ -135,7 +135,7 @@ export default function Navbar(props) {
   const DesktopMenu = (
     <> 
       <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-        {displayButtons(props.routes)}
+        {DisplayButtons(props.routes)}
       </HStack>
     </>
   )

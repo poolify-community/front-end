@@ -23,7 +23,7 @@ import { useFetchBalances } from 'features/Vaults/redux/hooks';
 import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
 
 export default function({vault, index, sharesBalance,...props}){
-
+    const underliyngBalance = 0;
     const [withdrawSettings, setWithdrawSettings] = useState({
         isZap: false,
         isSwap: false,

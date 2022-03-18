@@ -12,7 +12,7 @@ import Withdraw from "./Withdraw/Withdraw";
 
 
 
-const mobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
+const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
 
     return (
         <Box
@@ -48,7 +48,7 @@ const mobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
     )
 }
 
-const desktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
+const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
 
     return (
         <>
@@ -77,8 +77,8 @@ const desktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
 export default ({ vault, balanceSingle, index, sharesBalance,...props}) => {
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
     if(isOneLineMode){
-        return desktopVersion({ vault, balanceSingle, index, sharesBalance,...props});
+        return DesktopVersion({ vault, balanceSingle, index, sharesBalance,...props});
     }else{
-        return mobileVersion({ vault, balanceSingle, index, sharesBalance,...props});
+        return MobileVersion({ vault, balanceSingle, index, sharesBalance,...props});
     }
 };

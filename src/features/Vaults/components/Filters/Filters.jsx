@@ -34,7 +34,6 @@ const Controls = (props) => {
     }
 
 
-useState
     return (
         <HStack
             w="100%"
@@ -82,6 +81,7 @@ useState
             </Stack>
         </HStack>
     );
+    
 };
 
 export default Controls;

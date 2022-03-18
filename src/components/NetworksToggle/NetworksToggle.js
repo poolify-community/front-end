@@ -58,7 +58,7 @@ const NetworksToggle = memo(function () {
           <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} w={'200px'}>
             {isOpen ? 'Select Network' : (
               <Flex alignItems={'center'}>
-                <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
+                <Img src={getSingleAssetSrc(currentNetwork.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
                 <Text ml={'10px'}>{currentNetwork.name}</Text>
               </Flex>
             )}
