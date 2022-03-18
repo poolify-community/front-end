@@ -105,21 +105,6 @@ export default function Navbar(props) {
             <Spacer/>
             <Account />
           </Flex>
-
-          <Flex width={'100%'} justifyContent={'flex-end'} padding={'8px'}>
-            <chakra.a
-              p={3}
-              color={useColorModeValue("gray.800", "inherit")}
-              rounded="sm"
-              _hover={{ color: useColorModeValue("gray.800", "gray.600") }}
-            >
-              <AiFillBell />
-              <VisuallyHidden>Notifications</VisuallyHidden>
-            </chakra.a>
-            <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Flex>
           <Flex width={'100%'} alignItems={'center'} flexDirection={'column'} pt={'50px'}>
             {displayButtons(props.routes)}
           </Flex>
@@ -139,29 +124,18 @@ export default function Navbar(props) {
   
 
   
-  const DesktopMenu = (
+  const DesktopUserMenu = (
     <>
       <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-        {displayButtons(props.routes)}
-        
-        <chakra.a
-          p={3}
-          color={useColorModeValue("gray.800", "inherit")}
-          rounded="sm"
-          _hover={{ color: useColorModeValue("gray.800", "gray.600") }}
-        >
-          <AiFillBell />
-          <VisuallyHidden>Notifications</VisuallyHidden>
-        </chakra.a>
-
-        <Button onClick={toggleColorMode}>
-            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        </Button>
-
         <NetworksToggle></NetworksToggle>
-
         <Account />
-
+      </HStack>
+    </>
+  )
+  const DesktopMenu = (
+    <> 
+      <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
+        {displayButtons(props.routes)}
       </HStack>
     </>
   )
@@ -199,6 +173,9 @@ export default function Navbar(props) {
           </HStack>
           <HStack spacing={3} display="flex" alignItems="center">
             {DesktopMenu}
+          </HStack>
+          <HStack spacing={3} display="flex" alignItems="center">
+            {DesktopUserMenu}
           </HStack>
         </Flex>
       </chakra.header>

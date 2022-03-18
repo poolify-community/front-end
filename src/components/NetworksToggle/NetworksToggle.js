@@ -2,13 +2,11 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 import { getSingleAssetSrc } from 'libs/helpers/getSingleAssetSrc';
 import { allNetworks } from 'libs/helpers/networkPicklist';
 import {
-  Box,
   Flex,
-  Text,
-  Img,
-  SimpleGrid
+  Img,Button,Text,
+  Menu,MenuButton,MenuList,MenuItem
 } from '@chakra-ui/react';
-import { useModal } from 'providers/ModalProvider';
+import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
 
 const styles = {
   network: {
@@ -28,80 +26,55 @@ const styles = {
     alignSelf: "center",
     fill: "rgb(40, 13, 95)",
     flexShrink: "0",
-    marginBottom: "8px",
     height: "30px",
   },
 };
 
 const NetworksToggle = memo(function () {
-  const { setModal,onClose } = useModal();
   const currentNetwork = useMemo(
     () => allNetworks.find(network => network.id === window.REACT_APP_NETWORK_ID),
     []
   );
-
-  const handleClose = useCallback(() => {onClose()}, [onClose]);
-  const handleOpen = useCallback(() => setModal(title,body,null), [setModal]);
   
   const handleNetworkClick = useCallback(
     network => {
       console.log('----> network',network);
       if (network.id === currentNetwork.id) {
-        handleClose();
+       
       } else {
         window.location.hash = network.hash;
         window.location.reload();
       }
     },
-    [currentNetwork, handleClose]
+    [currentNetwork]
   );
 
-  const title = ('Select Network')
-  const body  = (
-    <Box
-      borderRadius="3xl"
-      border="1px"
-      borderStyle="solid"
-      borderColor="gray.600"
-      px={5}
-      pt={4}
-      pb={2}
-      mb={3}
-    >
-      <SimpleGrid minChildWidth='120px' spacing='40px'>
-          {allNetworks.map((network, key) => (
-            <Box
-              _hover={{backgroundColor:'#bdbdbd',cursor:'pointer'}}
-              style={styles.network}
-              key={network.id}
-              onClick={() => {
-                handleNetworkClick(network)
-              }}
-            >
-              <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
-              <Text style={{ fontSize: "14px" }}>{network.name}</Text>
-            </Box>
-          ))}
-        </SimpleGrid>
-    </Box>
-  );
-    
+
+
   return (
-    <Box display={'inline-flex'} height={'42px'} borderRadius={'12px'} backgroundColor={'#f3f3f3'} padding={'0 16px 0 0'} alignItems={'center'} 
-            _hover={{backgroundColor:'#bdbdbd',cursor:'pointer'}}
-            onClick={handleOpen}
-    >
-        <Img
-          height={'24px'} ml={'15px'}
-          src={getSingleAssetSrc(currentNetwork.asset).default}
-          alt={`${currentNetwork.asset} logo`}
-        />
-        <Flex alignItems={'center'} marginLeft={'16px'}>
-          <Box width={'10px'} height={'10px'} backgroundColor={'green'} borderRadius={'50%'}/>
-          <Text margin={'0 0 0 8px'} fontWeight={'bold'} color={'black'}>{currentNetwork.name}</Text>
-        </Flex>
-    </Box>
-  );
+    <Menu>
+      {({ isOpen }) => (
+        <>
+          <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} w={'200px'}>
+            {isOpen ? 'Select Network' : (
+              <Flex alignItems={'center'}>
+                <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
+                <Text ml={'10px'}>{currentNetwork.name}</Text>
+              </Flex>
+            )}
+          </MenuButton>
+          <MenuList>
+            {allNetworks.map((network, key) => (
+              <MenuItem onClick={() => handleNetworkClick(network)} key={key}>
+                <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
+                <Text ml={'10px'}>{network.name}</Text>
+                </MenuItem>
+            ))}
+          </MenuList>
+        </>
+      )}
+    </Menu>
+  )
 });
 
 export default NetworksToggle;
