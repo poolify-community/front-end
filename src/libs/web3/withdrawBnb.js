@@ -1,13 +1,13 @@
 import { bnbVaultABI } from '../config';
 //import { enqueueSnackbar } from '../common/redux/actions';
 
-export const withdrawBnb = async ({ web3, address, isAll, amount, contractAddress, DisplayNotification }) => {
+export const withdrawBnb = async ({ web3, address, isAll, amount, contractAddress, DisplayNotification,toastId }) => {
   const contract = new web3.eth.Contract(bnbVaultABI, contractAddress);
-  const data = await _withdraw({ web3, contract, isAll, amount, address, DisplayNotification });
+  const data = await _withdraw({ web3, contract, isAll, amount, address, DisplayNotification,toastId });
   return data;
 };
 
-const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification }) => {
+const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification,toastId }) => {
   return new Promise((resolve, reject) => {
     if (isAll) {
       contract.methods
