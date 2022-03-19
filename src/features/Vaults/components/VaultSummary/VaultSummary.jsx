@@ -39,27 +39,14 @@ export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone
     const balanceUsd    = balance   > 0 && fetchVaultsDataDone ? formatTvl(balance, vault.oraclePrice) : '';
     const depositedUsd  = deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, vault.oraclePrice, false) : '';
     // { sm:'320px', base: '750px', xl: '1200px' }
-
-
-
-    //console.log('-------------------------------------------------');
-    //console.log(byDecimals(new BigNumber('104999999999999999703'),18).toFormat());
-    //console.group('VaultRefresh');
-    //console.log('Tokens',tokens);
-    //console.log('balance',byDecimals(tokens[vault.token].tokenBalance, vault.tokenDecimals).toFormat());
-    //console.log('balance2',tokens[vault.token].tokenBalance);
-    //console.log('balance3',tokenBalance(tokens[vault.token].symbol).toFormat());
-    //console.log('shareBalance',byDecimals(tokens[vault.vaultToken].tokenBalance, vault.tokenDecimals).toFormat());
-    //console.log('priceParShare',vault.pricePerFullShare);
-    //console.log('deposited',deposited.toFormat())
-    //console.groupEnd();
+      //console.log('deposited',deposited);
     return (
       <>
         
-        <DepositedStats value={deposited.toFormat(4)} valueUsd={depositedUsd}/>
+        <DepositedStats value={deposited.toFormat(deposited.gt(1) ? 0 : 4)} valueUsd={depositedUsd}/>
         {isOneLineMode && (
           <>
-            <WalletStats value={balance.toFormat(4)} valueUsd={balanceUsd}/>
+            <WalletStats value={balance.toFormat(balance.gt(1) ? 0 : 4)} valueUsd={balanceUsd}/>
             <APYStats apy={apy}/>
             <TVLStats value={formatTvl(vault.tvl, vault.oraclePrice)}/>
           </>

@@ -9,7 +9,7 @@ export const formatApy = (apy, dp = 2) => {
   apy *= 100;
 
   const order = apy < 1 ? 0 : Math.floor(Math.log10(apy) / 3);
-  console.log('order',Math.floor(Math.log10(BigNumber(apy)) / 3));
+  //console.log('order',Math.floor(Math.log10(BigNumber(apy)) / 3));
   if (order >= units.length - 1) return `🔥`;
 
   const num = apy / 1000 ** order;

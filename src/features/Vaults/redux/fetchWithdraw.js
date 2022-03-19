@@ -7,7 +7,7 @@ import {
 } from './constants';
 import { withdraw, withdrawBnb, zapWithdraw, zapWithdrawAndSwap } from 'libs/web3';
 
-export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index ,DisplayNotification}) {
+export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, index ,DisplayNotification,toastId}) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_WITHDRAW_BEGIN,
@@ -15,7 +15,7 @@ export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, i
     });
 
     const promise = new Promise((resolve, reject) => {
-      withdraw({ web3, address, isAll, amount, contractAddress, DisplayNotification })
+      withdraw({ web3, address, isAll, amount, contractAddress, DisplayNotification,toastId})
         .then(data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,
@@ -36,7 +36,7 @@ export function fetchWithdraw({ address, web3, isAll, amount, contractAddress, i
   };
 }
 
-export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress, index ,DisplayNotification}) {
+export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress, index ,DisplayNotification,toastId}) {
   return dispatch => {
     dispatch({
       type: VAULT_FETCH_WITHDRAW_BEGIN,
@@ -44,7 +44,7 @@ export function fetchWithdrawBnb({ address, web3, isAll, amount, contractAddress
     });
 
     const promise = new Promise((resolve, reject) => {
-      withdrawBnb({ web3, address, isAll, amount, contractAddress, DisplayNotification })
+      withdrawBnb({ web3, address, isAll, amount, contractAddress, DisplayNotification,toastId})
         .then(data => {
           dispatch({
             type: VAULT_FETCH_WITHDRAW_SUCCESS,

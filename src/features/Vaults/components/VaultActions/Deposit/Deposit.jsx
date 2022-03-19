@@ -168,6 +168,7 @@ const Deposit = function({vault,...props}){
 
     const depositAssets = deposit => {
         console.log('deposit',deposit);
+        let toastId = new Date().getTime() + Math.random();
         if(vault.depositsPaused){
           console.error('Deposits paused!');
           return;
@@ -206,29 +207,30 @@ const Deposit = function({vault,...props}){
             isAll: !!deposit.isAll,
             amount: convertAmountToRawNumber(deposit.amount, deposit.token.decimals),
             contractAddress: deposit.vaultAddress,
-            DisplayNotification
+            DisplayNotification,
+            toastId
           };
           console.log('depositArgs',depositArgs);
           
           if(vault.tokenAddress){
             fetchDeposit(depositArgs)
             .then(() => {
-                DisplayNotification({message:t('Vault-DepositSuccess'),status: 'success' });
+                DisplayNotification({key:toastId,message:t('Vault-DepositSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
             })
             .catch(error =>
-                DisplayNotification({message:t('Vault-DepositError', { error }),status: 'error' })
+                DisplayNotification({key:toastId,message:t('Vault-DepositError', { error }),status: 'error' })
             );
           }else{
             fetchDepositBnb(depositArgs)
             .then(() => {
-                DisplayNotification({message:t('Vault-DepositSuccess'),status: 'success' });
+                DisplayNotification({key:toastId,message:t('Vault-DepositSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
             })
             .catch(error =>
-                DisplayNotification({message:t('Vault-DepositError', { error }),status: 'error' })
+                DisplayNotification({key:toastId,message:t('Vault-DepositError', { error }),status: 'error' })
             );
           }
         }

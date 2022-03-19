@@ -45,7 +45,7 @@ export default function({apy,...props}){
 
     return (
       <>
-      <GridItem w='100%' h='70px'>
+      <GridItem w='150px' h='70px'>
           <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
               <Box marginLeft={'15px'}>
                 <Heading size={'xs'}>APY</Heading>
@@ -53,7 +53,7 @@ export default function({apy,...props}){
               </Box>
           </Flex>
       </GridItem>
-      <GridItem w='100%' h='70px'>
+      <GridItem w='150px' h='70px'>
             <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
               <Box marginLeft={'15px'}>
                 <Heading size={'xs'}>Daily</Heading>

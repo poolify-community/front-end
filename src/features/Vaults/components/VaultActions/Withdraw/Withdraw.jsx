@@ -53,8 +53,8 @@ const Withdraw = function({vault, index, sharesBalance,...props}){
         outputIndex: 0,
         amount: new BigNumber(0),
         input: '0.0',
-        vaultAddress: vault.earnContractAddress,
-        withdrawAddress: vault.earnContractAddress,
+        vaultAddress: vault.vaultContractAddress,
+        withdrawAddress: vault.vaultContractAddress,
         isNeedApproval: false,
         slippageTolerance: 0.01,
         swapAmountOut: vault.zapWithdrawEstimate?.swapAmountOut,
@@ -129,34 +129,36 @@ const Withdraw = function({vault, index, sharesBalance,...props}){
     };
     
     const withdraw = (sharesAmount, isAll = false) => {
+        let toastId = new Date().getTime() + Math.random();
         const vaultWithdrawArgs = {
             address,
             web3,
             isAll,
             amount: sharesAmount,
-            contractAddress: vault.earnContractAddress,
+            contractAddress: vault.vaultContractAddress,
             index,
-            DisplayNotification
+            DisplayNotification,
+            toastId
         };
         if (vault.tokenAddress) {
             fetchWithdraw(vaultWithdrawArgs)
               .then(() => {
-                DisplayNotification({message:t('Vault-WithdrawSuccess'),status: 'success' });
+                DisplayNotification({key:toastId,message:t('Vault-WithdrawSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
               })
               .catch(error =>
-                DisplayNotification({message:t('Vault-WithdrawError', { error }),status: 'error' })
+                DisplayNotification({key:toastId,message:t('Vault-WithdrawError', { error }),status: 'error' })
               );
         } else {
             fetchWithdrawBnb(vaultWithdrawArgs)
               .then(() => {
-                DisplayNotification({message:t('Vault-WithdrawSuccess'),status: 'success' });
+                DisplayNotification({key:toastId,message:t('Vault-WithdrawSuccess'),status: 'success' });
                 fetchBalances({ address, web3, tokens });
                 resetInput();
               })
               .catch(error =>
-                DisplayNotification({message:t('Vault-WithdrawError', { error }),status: 'error' })
+                DisplayNotification({key:toastId,message:t('Vault-WithdrawError', { error }),status: 'error' })
               );
         }
     };
@@ -198,8 +200,14 @@ const Withdraw = function({vault, index, sharesBalance,...props}){
             </InputGroup>
             <Flex marginTop={'30px'} justifyContent={'center'} flexDirection={'column'}>
                 <Box marginTop={'8px'} height='48px'></Box>
-                <Button colorScheme='blue' size='lg' width={'100%'} height='48px' onClick={handleWithdraw}>
-                    Withdraw
+                <Button colorScheme='blue' size='lg' width={'100%'} height='48px' 
+                  onClick={handleWithdraw}
+                  disabled={sharesBalance.isZero() || fetchWithdrawPending[index]}
+                >
+                  {   fetchWithdrawPending[index]
+                      ? `${t('Vault-Withdrawing')}`
+                      : `${t('Vault-WithdrawButton')}`
+                  }
                 </Button>
             </Flex>
         </Flex>

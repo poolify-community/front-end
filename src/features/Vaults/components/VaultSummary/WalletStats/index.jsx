@@ -8,7 +8,7 @@ import {
 
 const wallet = function({value,...props}){
     return (
-        <GridItem w='100%' h='70px'>
+        <GridItem w='150px' h='70px'>
             <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
                 <Box marginLeft={'15px'}>
                   <Heading size={'xs'}>Wallet</Heading>

@@ -14,7 +14,7 @@ const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification
         .withdrawAllBNB()
         .send({ from: address })
         .on('transactionHash', function (hash) {
-          DisplayNotification({message:hash,status:'success'});
+          DisplayNotification({key:toastId,message:hash,status:'success',duration:10000});
         })
         .on('receipt', function (receipt) {
           console.log(receipt);
@@ -33,7 +33,7 @@ const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification
         .withdrawBNB(amount)
         .send({ from: address })
         .on('transactionHash', function (hash) {
-          DisplayNotification({message:hash,status:'success'});
+          DisplayNotification({key:toastId,message:hash,status:'success',duration:10000});
         })
         .on('receipt', function (receipt) {
           resolve();

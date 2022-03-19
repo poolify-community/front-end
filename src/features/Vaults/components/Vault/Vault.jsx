@@ -63,7 +63,7 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
                 <TitleSection vault={vault}/>
                 <Spacer />
                 <>
-                    <Grid templateColumns={isOneLineMode?'1fr 1fr 1fr 1fr 1fr':'1fr 1fr'} lineHeight={'2rem'} gap={'4rem'}>
+                    <Grid templateColumns={isOneLineMode?'1fr 1fr 1fr 1fr 1fr':'1fr 1fr'} lineHeight={'2rem'} gap={'1rem'}>
                         <VaultSummary 
                             vault={vault}
                             tokens={tokens}
