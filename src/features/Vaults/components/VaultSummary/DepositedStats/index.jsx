@@ -8,7 +8,7 @@ import {
 import { useBreakpointValue } from '@chakra-ui/media-query';
 
 
-const deposited = function({value,...props}){
+const Deposited = function({value,...props}){
     const isOneLineMode = useBreakpointValue({ base: false, lg: true });
 
 
@@ -24,4 +24,4 @@ const deposited = function({value,...props}){
       );
 }
 
-export default deposited;
+export default Deposited;

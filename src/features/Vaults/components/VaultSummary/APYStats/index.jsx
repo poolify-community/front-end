@@ -19,7 +19,7 @@ const yearlyToDaily = apy => {
   };
 
   
-export default function({apy,...props}){
+const APYStats = function({apy,...props}){
     const values = {};
 
     values.totalApy = apy.totalApy;
@@ -64,3 +64,5 @@ export default function({apy,...props}){
       </>
     );
 }
+
+export default APYStats;

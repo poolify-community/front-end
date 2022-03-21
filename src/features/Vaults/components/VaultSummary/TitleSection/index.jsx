@@ -10,7 +10,7 @@ import DoubleTokenIcon from 'components/Icons/DoubleTokenIcon';
 import SingleTokenIcon from 'components/Icons/SingleTokenIcon';
 
 
-export default function({vault,...props}){
+const TitleSection = function({vault,...props}){
     const isOneLineMode = useBreakpointValue({ base: false, lg: true });
     const {tokenA,tokenB,name,stratType} = vault;
 
@@ -79,3 +79,5 @@ export default function({vault,...props}){
 
     return isOneLineMode?desktopTitle:mobileTitle;
 }
+
+export default TitleSection;

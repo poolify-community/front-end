@@ -6,7 +6,7 @@ import {
     Heading,
 } from "@chakra-ui/react";
 
-export default function({value}){
+const TVLStats = function({value}){
     return (
         <GridItem w='150px' h='70px'>
             <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
@@ -18,3 +18,5 @@ export default function({value}){
         </GridItem>
       );
 }
+
+export default TVLStats;

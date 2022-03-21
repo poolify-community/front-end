@@ -6,7 +6,7 @@ import {
     Heading,
 } from "@chakra-ui/react";
 
-const wallet = function({value,...props}){
+const Wallet = function({value,...props}){
     return (
         <GridItem w='150px' h='70px'>
             <Flex alignItems={'center'} justifyContent={'center'} h='inherit'>
@@ -19,4 +19,4 @@ const wallet = function({value,...props}){
       );
 }
 
-export default wallet;
+export default Wallet;
