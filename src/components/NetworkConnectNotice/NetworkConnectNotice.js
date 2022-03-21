@@ -30,12 +30,13 @@ const styles = {
     margin: '-10px -10px 15px 0',
   },
   button: {
-    border: '1px solid #3a83c1',
+    border: '1px solid black',
     padding: '4px 8px',
-    backgroundColor: '#3a83c1',
+    backgroundColor: 'black',
     textTransform: 'none',
     margin: '10px 10px 0 0',
-    color:'white'
+    color:'white',
+    borderRadius: '980px'
   },
   note: {
     marginBottom: 15,

@@ -13,7 +13,7 @@ const AppLayout = (props) => {
             <Flex position={'fixed'} w={'100%'} className="appLayout-header" zIndex={'200'}>
                 {props.header}
             </Flex>
-            <Flex as="main" marginTop={'100px!important'} className="appLayout-body">
+            <Flex as="main" w={'100%'} marginTop={'100px!important'} className="appLayout-body" flexDirection={'column'}>
                 {props.body}
             </Flex>
         </VStack>

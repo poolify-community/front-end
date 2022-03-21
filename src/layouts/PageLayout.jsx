@@ -18,23 +18,27 @@ const PageLayout = (props) => {
                     },
                 }}
                 justifyContent={{ base: 'space-between', '2xl': 'center' }}
-                //justifyContent="center"
                 position="relative"
             >
-                <VStack w={{ sm:'100VW', base: '750px', xl: '1200px' }}>
-                <Box
-                    w={'full'}
-                    boxShadow={'2xl'}
-                    rounded={'lg'}
-                    p={6}
-                    mt={'50px'}
-                    textAlign={'center'}
-                >
-                    {props.header}
-                    <Divider m="0 !important" />
-                    {props.body}
-                </Box>
-                    
+                <VStack w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }}>
+                    <Box
+                        w={'full'}
+                        boxShadow={'lg'}
+                        rounded={'lg'}
+                        p={6}
+                        mt={'50px'}
+                        mb={'15px'}
+                        textAlign={'center'}
+                    >
+                        {props.header}
+
+                        <Divider m="0 !important" />
+
+                        <Box mt={'10px'}>
+                            {props.body}
+                        </Box>
+                        
+                    </Box>
                 </VStack>
             </Flex>
         </VStack>

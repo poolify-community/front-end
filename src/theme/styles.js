@@ -17,11 +17,6 @@ export const globalStyles = {
       body: {
         fontFamily: 'SF Pro Text',
         color:'#1d1d1f',
-        marginBottom: '15px',
-        fontSize: '17px',
-        lineHeight: '1.47059',
-        fontWeight: '400',
-        letterSpacing: '-.022em',
       },
       html: {
         fontFamily: 'SF Pro Text',

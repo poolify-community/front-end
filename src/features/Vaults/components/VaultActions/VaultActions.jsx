@@ -56,7 +56,7 @@ const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
         <Box
             border={"2px solid"} borderColor={useColorModeValue('rgb(238, 234, 244)', '#302543')}
             borderRadius={{base:'0px',md:'16px'}}
-            spacing="10px" flexShrink={0} ml={{base:'0px',md:'32px'}} mr={'0px'} 
+            spacing="10px"  ml={{base:'0px',md:'20px'}} mr={'0px'} 
             justifyContent="space-between" 
         >
             <Deposit index={index} vault={vault}/>
@@ -64,7 +64,7 @@ const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
         <Box
             border={"2px solid"} borderColor={useColorModeValue('rgb(238, 234, 244)', '#302543')}
             borderRadius={{base:'0px',md:'16px'}}
-            spacing="10px" flexShrink={0} ml={{base:'0px',md:'32px'}} mr={'0px'} 
+            spacing="10px"  ml={{base:'0px',md:'20px'}} mr={{base:'0px',md:'20px'}} 
             justifyContent="space-between" 
         >
             <Withdraw index={index} vault={vault} sharesBalance={sharesBalance}/>
