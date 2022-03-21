@@ -26,7 +26,7 @@ const FETCH_INTERVAL_MS = 15 * 1000;
 
 
 export default function() {
-  const oneLineMode = useBreakpointValue({ base: false, xl: true });
+  const isOneLineMode = useBreakpointValue({ base: false, lg: true });
 
   /** Vaults informations **/
 
@@ -68,8 +68,10 @@ export default function() {
         <Header
             title={
                 <>
-                    <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'}>
-                        <Heading size={'4xl'} color={'gray.600'}> Vaults </Heading>
+                    <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
+                      flexDirection={isOneLineMode?'row':'column'}
+                    >
+                        <Heading size={'4xl'} color={'black'}> Vaults </Heading>
                         {/* <NetworksToggle></NetworksToggle> */}
                         <AllRewards />
                     </Flex>

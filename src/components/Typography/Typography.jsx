@@ -14,26 +14,26 @@ export const Text = chakra(({ variant, ...chakraProps }) => {
         switch (variant) {
             case 'display':
                 return {
-                    fontFamily: 'Montserrat-Medium',
+                    fontFamily: 'SF Pro Text',
                     fontSize: '16px',
                     lineHeight: '24px',
                 };
             case 'caption-slim':
                 return {
-                    fontFamily: 'Montserrat',
+                    fontFamily: 'SF Pro Text',
                     fontSize: '12px',
                     lineHeight: '15px',
                     fontWeight: '500',
                 };
             case 'caption':
                 return {
-                    fontFamily: 'Montserrat-Medium',
+                    fontFamily: 'SF Pro Text',
                     fontSize: '12px',
                     lineHeight: '15px',
                 };
             case 'caption-bold':
                 return {
-                    fontFamily: 'Montserrat-Bold',
+                    fontFamily: 'SF Pro Text SemiBold',
                     fontSize: '12px',
                     lineHeight: '15px',
                 };

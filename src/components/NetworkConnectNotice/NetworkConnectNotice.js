@@ -10,7 +10,7 @@ const targetNetworkId = window.REACT_APP_NETWORK_ID;
 
 const styles = {
   notice: {
-    backgroundColor: 'rgba(166, 189, 203, 0.42)',
+    backgroundColor: '#f5f5f7',
     padding: 25,
     marginBottom: 25,
     marginTop:15,
@@ -22,6 +22,9 @@ const styles = {
   },
   message: {
     marginBottom: 15,
+    fontSize: '28px',
+    lineHeight: '1.10722',
+    fontWeight: '400'
   },
   actions: {
     margin: '-10px -10px 15px 0',
@@ -32,6 +35,7 @@ const styles = {
     backgroundColor: '#3a83c1',
     textTransform: 'none',
     margin: '10px 10px 0 0',
+    color:'white'
   },
   note: {
     marginBottom: 15,

@@ -24,7 +24,6 @@ const PageLayout = (props) => {
                 <VStack w={{ sm:'100VW', base: '750px', xl: '1200px' }}>
                 <Box
                     w={'full'}
-                    bg={useColorModeValue('#a6bdcb6b', 'gray.900')}
                     boxShadow={'2xl'}
                     rounded={'lg'}
                     p={6}

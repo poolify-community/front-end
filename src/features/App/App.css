@@ -183,13 +183,6 @@ html {
     border-radius: 10px
 }
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 }
@@ -197,4 +190,26 @@ code {
 /** Connector modal **/
 .web3modal-modal-lightbox {
     z-index: 200 !important;
+}
+
+
+@font-face {
+	font-family:'SF Pro Display';
+	font-style:normal;
+	font-weight:100;
+	src:local('☺'), url("../../assets/fonts/sf-pro-display_regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family:'SF Pro Text';
+	font-style:normal;
+	font-weight:100;
+	src:local('☺'), url("../../assets/fonts/sf-pro-text_regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family:'SF Pro Text SemiBold';
+	font-style:normal;
+	font-weight:100;
+	src:local('☺'), url("../../assets/fonts/sf-pro-text_semibold.woff2") format("woff2");
 }

@@ -2,8 +2,10 @@ import { mode } from "@chakra-ui/theme-tools";
 
 export const globalStyles = {
   colors: {
+    black:'#1d1d1f',
     gray: {
       700: "#1f2733",
+      800:'#1d1d1f'
     },
     poolify:{
       200:'#73a8d5',
@@ -13,11 +15,17 @@ export const globalStyles = {
   styles: {
     global: (props) => ({
       body: {
-        bg: mode("gray.50", "gray.800")(props),
-        fontFamily: 'Helvetica, sans-serif'
+        fontFamily: 'SF Pro Text',
+        color:'#1d1d1f',
+        marginBottom: '15px',
+        fontSize: '17px',
+        lineHeight: '1.47059',
+        fontWeight: '400',
+        letterSpacing: '-.022em',
       },
       html: {
-        fontFamily: 'Helvetica, sans-serif'
+        fontFamily: 'SF Pro Text',
+        color:'#1d1d1f'
       }
     }),
   },

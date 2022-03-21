@@ -20,7 +20,7 @@ import {
               title={
                   <>
                       <HStack spacing="20px">
-                          <Heading size={'4xl'} color={'blue.400'}> Dashboard </Heading>
+                          <Heading size={'3xl'}> Dashboard </Heading>
                       </HStack>
                   </>
               }

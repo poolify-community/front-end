@@ -40,7 +40,7 @@ export default function Navbar(props) {
   const DisplayButtons = (routes) => {
     //console.log('DisplayButtons --> ');
     let activeColor   = useColorModeValue("poolify.400", "white");
-    let inactiveColor = useColorModeValue("gray.600", "gray.500");
+    let inactiveColor = "black";
 
     return routes.map((prop, key) => {
       return (
@@ -146,7 +146,7 @@ export default function Navbar(props) {
     <Box shadow="md" w={'100%'}>
       <chakra.header
         bg={bg}
-        borderColor="gray.600"
+        borderColor="black"
         borderBottomWidth={1}
         w="full"
         px={{ base: 2, sm: 4 }}

@@ -64,7 +64,7 @@ import {
           <Link
             textDecoration="underline"
             fontWeight="medium"
-            color={useColorModeValue('gray.600', 'gray.400')}
+            color={'black'}
           >
             Quick shop
           </Link>

@@ -64,7 +64,7 @@ const ModalProvider = ({ children }) => {
                         {modalData?.title}
                     </ModalHeader>
                     <ModalCloseButton
-                        color="gray.600"
+                        color="black"
                         fontSize="sm"
                         _hover={{
                             color: "gray.700",

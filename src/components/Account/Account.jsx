@@ -101,7 +101,7 @@ function Account() {
       borderRadius="3xl"
       border="1px"
       borderStyle="solid"
-      borderColor="gray.600"
+      borderColor="black"
       background={'#222528'}
       px={5}
       pt={4}
