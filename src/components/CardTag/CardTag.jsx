@@ -12,8 +12,8 @@ export default (props) => {
             bg: useColorModeValue('secondary.100', 'secondary.400'),
         },
         orange: {
-            color: useColorModeValue('primary.500', 'primary.50'),
-            bg: useColorModeValue('primary.100', '#2252CC'),
+            color: 'orange.500',
+            bg: 'orange.100',
         },
         grey: {
             color: useColorModeValue('primary.500', 'primary.50'),

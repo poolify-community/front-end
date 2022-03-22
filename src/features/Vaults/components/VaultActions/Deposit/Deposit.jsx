@@ -259,7 +259,7 @@ const Deposit = function({vault,...props}){
                     fontSize='1.2em'
                     children={getIconElement(vault)}
                 />
-                <Input value={depositSettings.input} onChange={handleInputAmountChange}
+                <Input value={depositSettings.input} onChange={handleInputAmountChange} disabled={vault.depositsPaused}
                     pattern="^[0-9]*[.,]?[0-9]{0,18}$" inputMode="decimal" min="0" placeholder="0.0" scale="md" size='lg' 
                 />
                 <InputRightElement

@@ -26,6 +26,7 @@ export default function({vault,tokens,apys,fetchBalancesDone,fetchVaultsDataDone
     const isOneLineMode = useBreakpointValue({ base: false, lg: true });
     const { tokenBalance } = useFetchBalances();
 
+    console.log('tokens[vault.vaultToken]',tokens[vault.vaultToken]);
 
     const balance   = byDecimals(tokens[vault.token].tokenBalance, vault.tokenDecimals);
     const deposited = byDecimals(

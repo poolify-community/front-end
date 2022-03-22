@@ -51,8 +51,12 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
         borderColor={'secondary.300'}
       >
         <CardTagContainer>
-            {address && vault.isPoolifyStaking && (
+            {address && vault.isPoolifyStaking && !vault.depositsPaused && (
                 <CardTag variant="blue" text="AUTO STAKE" />
+            )}
+
+            {address && vault.depositsPaused && (
+                <CardTag variant="orange" text="Paused vault" />
             )}
         </CardTagContainer>
 
