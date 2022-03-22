@@ -1,6 +1,7 @@
 import initialState from './initialState';
 import { reducer as fetchBalancesReducer } from './fetchBalances';
 import { reducer as fetchApysReducer } from './fetchApys';
+import { reducer as fetchPendingPLFYReducer } from './fetchPendingPLFY';
 import { reducer as fetchVaultsDataReducer } from './fetchVaultsData';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
@@ -15,6 +16,7 @@ const reducers = [
   fetchDepositReducer,
   fetchWithdrawReducer,
   fetchApysReducer,
+  fetchPendingPLFYReducer,
   fetchZapEstimateReducer,
   fetchBalancesReducer,
 ];

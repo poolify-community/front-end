@@ -100,6 +100,7 @@ export const bscTestNetPools = [
     buyTokenUrl: "https://app.1inch.io/#/56/swap/BNB/PLFY",
     createdAt: 1606511757,
     isPoolifyStaking: true,
+    includeHarvestBounty:true,
     categories: [
         "core",
         "SingleAsset"
@@ -138,6 +139,7 @@ export const bscTestNetPools = [
     "https://pancake.kiemtienonline360.com/swap?outputCurrency=0x12BB890508c125661E03b09EC06E404bc9289040",
   createdAt: 1647560542,
   isPoolifyStaking: false,
+  includeHarvestBounty:true,
   categories: [
       "core",
       "SingleAsset"

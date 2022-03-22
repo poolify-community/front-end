@@ -18,7 +18,7 @@ import Filters from 'features/Vaults/components/Filters/Filters';
 import AllRewards from 'features/Vaults/components/AllRewards/AllRewards';
 
 import { useConnectWallet } from 'libs/hooks/useConnector';
-import { useFetchBalances, useFetchVaultsData, useFetchApys } from './redux/hooks';
+import { useFetchBalances, useFetchVaultsData, useFetchApys,useFetchPendingPLFY } from './redux/hooks';
 
 
 
@@ -34,23 +34,19 @@ export default function() {
   const { pools, fetchVaultsData, fetchVaultsDataPending, fetchVaultsDataDone } = useFetchVaultsData();
   const { tokens,tokenBalance, fetchBalances, fetchBalancesPending, fetchBalancesDone } = useFetchBalances();
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
+  const { pendingPLFY, fetchPendingPLFY, fetchPendingPLFYDone } = useFetchPendingPLFY();
 
-
-  useEffect(() => {
-    fetchApys();
-    //console.log('apys',apys);
-    const id = setInterval(fetchApys, FETCH_INTERVAL_MS);
-    return () => clearInterval(id);
-  }, [fetchApys]);
 
   useEffect(() => {
     const fetch = () => {
+      console.log('fetch ALL');
       if (address && web3) {
         console.log('fetchBalances');
         fetchBalances({ address, web3, tokens });
       }
       fetchVaultsData({ address, web3, pools });
       fetchApys();
+      fetchPendingPLFY();
     };
     fetch();
 
@@ -59,7 +55,7 @@ export default function() {
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3, fetchBalances, fetchVaultsData]);
+  }, [address, web3,fetchApys,fetchBalances, fetchVaultsData,fetchPendingPLFY]);
 
 
   return (
@@ -73,7 +69,7 @@ export default function() {
                     >
                         <Heading size={'4xl'} color={'black'}> Vaults </Heading>
                         {/* <NetworksToggle></NetworksToggle> */}
-                        <AllRewards />
+                        <AllRewards tokens={tokens} vaults={pools} pendingPLFY={pendingPLFY} fetchPendingPLFYDone={fetchPendingPLFYDone}/>
                     </Flex>
                 </>
             }
@@ -88,8 +84,10 @@ export default function() {
               vaults={pools}
               tokens={tokens}
               apys={apys}
+              pendingPLFY={pendingPLFY}
               fetchBalancesDone={fetchBalancesDone}
               fetchVaultsDataDone={fetchVaultsDataDone}
+              fetchPendingPLFYDone={fetchPendingPLFYDone}
               fetchApysDone={fetchApysDone}
             />
         </Stack>

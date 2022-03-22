@@ -10,7 +10,7 @@ import {
 import Vault from 'features/Vaults/components/Vault/Vault';
 import { useConnectWallet } from 'libs/hooks/useConnector';
 
-export default function VaultList({vaults,tokens,apys,fetchBalancesDone,fetchVaultsDataDone,fetchApysDone,...props}) {
+export default function VaultList({vaults,tokens,apys,pendingPLFY,fetchBalancesDone,fetchVaultsDataDone,fetchApysDone,fetchPendingPLFYDone,...props}) {
         const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
         const coreVaults = vaults.filter(item => item?.categories?.includes('core'));
         const partnerVaults = vaults.filter(item => item?.categories?.includes('partner'));

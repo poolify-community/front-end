@@ -27,6 +27,8 @@ function fakeMultiCall(actions){
     })
 }
 
+/** TODO: replace with MULTICALL !!!!!! */
+
 export function fetchVaultsData({ web3, pools }) {
   return dispatch => {
     dispatch({

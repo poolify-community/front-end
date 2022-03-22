@@ -1,5 +1,6 @@
 export { useFetchBalances } from './fetchBalances';
 export { useFetchApys } from './fetchApys';
+export { useFetchPendingPLFY } from './fetchPendingPLFY';
 export { useFetchVaultsData } from './fetchVaultsData';
 export { useFetchDeposit } from './fetchDeposit';
 export { useFetchWithdraw } from './fetchWithdraw';
