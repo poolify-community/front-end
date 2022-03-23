@@ -6,6 +6,8 @@ import { reducer as fetchVaultsDataReducer } from './fetchVaultsData';
 import { reducer as fetchWithdrawReducer } from './fetchWithdraw';
 import { reducer as fetchDepositReducer } from './fetchDeposit';
 import { reducer as fetchApprovalReducer } from './fetchApproval';
+import { reducer as fetchHarvestReducer } from './fetchHarvest';
+import { reducer as fetchHarvestAllReducer } from './fetchHarvestAll';
 import { reducer as fetchZapDepositReducer } from './fetchZapDeposit';
 import { reducer as fetchZapEstimateReducer } from './fetchZapEstimate';
 
@@ -19,6 +21,8 @@ const reducers = [
   fetchPendingPLFYReducer,
   fetchZapEstimateReducer,
   fetchBalancesReducer,
+  fetchHarvestReducer,
+  fetchHarvestAllReducer
 ];
 
 export default function reducer(state = initialState, action) {

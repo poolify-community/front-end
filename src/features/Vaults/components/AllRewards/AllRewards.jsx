@@ -6,10 +6,16 @@ import {
     Spacer
 } from "@chakra-ui/react";
 import BigNumber from 'bignumber.js';
+import { useTranslation } from 'react-i18next';
 import React,{useEffect,useState} from 'react';
+
 import Card from 'components/Card/Card';
 import {getIconElement,getLPElement} from 'libs/helpers/tokens';
 import { fetchPrice } from 'libs/web3';
+import { useFetchHarvestAll } from 'features/Vaults/redux/hooks';
+import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
+import {useNotifier} from 'libs/helpers/notifier';
+
 
 const styles = {
     bountyText:{
@@ -37,15 +43,39 @@ const calculatePendingPLFYandBounty = (vaults,pendingPLFY) => {
     return bounty;
 }
 
-export default function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...props}){
+
+
+const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...props}){
+    const { t } = useTranslation();
+    const {DisplayNotification} = useNotifier();
+    const { web3, address } = useConnectWallet();
+    const { fetchHarvestAll, fetchHarvestPending } = useFetchHarvestAll();
+
     const [bounty, setBounty] = useState('0');
     const [bountyUSD, setBountyUSD] = useState('0');
+
+
+
     useEffect(() => {
         let _bounty = calculatePendingPLFYandBounty(vaults,pendingPLFY);
         let _bountyUSD = _bounty.times(fetchPrice({ id: 'PLFY' }));
         setBounty(_bounty.toFormat(4));
         setBountyUSD(_bountyUSD.toFormat(4))
     }, [vaults,pendingPLFY,fetchPendingPLFYDone]);
+
+    const claimBounty = () => {
+        console.log('claimBounty');
+        let toastId = new Date().getTime() + Math.random();
+        fetchHarvestAll({
+            address,
+            web3,
+            vaults:vaults.filter(x => x.includeHarvestBounty),
+            DisplayNotification,
+            toastId
+          })
+          .then(() => DisplayNotification({message:t('Vault-ApprovalSuccess'), status: 'success' }))
+          .catch(error => DisplayNotification({ message:t('Vault-ApprovalError', { error }),variant: 'error' }));
+    }
 
 
     return (
@@ -71,7 +101,7 @@ export default function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...props
                         </Flex>
                     </Flex>
                     <Flex justifyContent={'center'} alignItems={'center'} flexDirection={'column'} mt={'5px'}>
-                        <Button colorScheme='blue' size='lg' height='40px' w={'100px'}>
+                        <Button colorScheme='blue' size='lg' height='40px' w={'100px'} onClick={claimBounty}>
                             Claim 
                         </Button>
                     </Flex>
@@ -80,3 +110,5 @@ export default function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...props
         </Card>
     )
 }
+
+export default AllRewards;

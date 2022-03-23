@@ -5,3 +5,5 @@ export { fetchDeposit } from './fetchDeposit';
 export { fetchWithdraw } from './fetchWithdraw';
 export { fetchApys } from './fetchApys';
 export { fetchPendingPLFY } from './fetchPendingPLFY';
+export { fetchHarvest } from './fetchHarvest';
+export { fetchHarvestAll } from './fetchHarvestAll';

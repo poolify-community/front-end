@@ -12,4 +12,6 @@ export { zapWithdraw, zapWithdrawAndSwap } from './zapWithdraw';
 export { zapDeposit } from './zapDeposit';
 export { zapDepositEstimate, zapWithdrawEstimate } from './zapEstimate';
 export { registerToken } from './registerToken';
+export { harvest } from './harvest';
+export { harvestAll } from './harvestAll';
 

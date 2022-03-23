@@ -7,3 +7,5 @@ export { useFetchWithdraw } from './fetchWithdraw';
 export { useFetchApproval } from './fetchApproval';
 export { useFetchZapDeposit } from './fetchZapDeposit';
 export { useFetchZapEstimate } from './fetchZapEstimate';
+export { useFetchHarvest } from './fetchHarvest';
+export { useFetchHarvestAll } from './fetchHarvestAll';
