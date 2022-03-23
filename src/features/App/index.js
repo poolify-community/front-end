@@ -11,6 +11,7 @@ import {NetworkConnectNotice} from 'components/NetworkConnectNotice/NetworkConne
 //import Home from 'views/Home/Home';
 import Dashboard from 'features/Dashboard';
 import Vaults from 'features/Vaults';
+import BetaTest from 'features/BetaTest';
 //import CrowdNFT from 'views/CrowdNFT/CrowdNFT';
 // Icons
 import {HomeIcon} from "components/Icons/Icons";
@@ -30,6 +31,7 @@ const Center = (
       <Route path="/"  element={<Dashboard />}/>
       {/* <Route path="/vaults"  element={<Vaults />}/> */}
       <Route path="/vaults"  element={<Vaults />}/>
+      <Route path="/BetaTest"  element={<BetaTest />}/>
       {/* <Route path="/nft-pool"  element={<CrowdNFT />}/> */}
   </Routes>
 );
@@ -43,6 +45,10 @@ var routes = [
   {
     path: "/vaults",
     name: "Vaults",
+  },
+  {
+    path: "/BetaTest",
+    name: "BetaTest",
   }
 ];
 

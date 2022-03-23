@@ -18,7 +18,8 @@ export {
   uniswapV2PairABI,
   uniswapV2RouterABI,
   launchPoolABI,
-  harvestAllABI
+  harvestAllABI,
+  testRequestPLFYABI
 } from './abi';
 
 export { bscPools } from './vault/bsc_pools';

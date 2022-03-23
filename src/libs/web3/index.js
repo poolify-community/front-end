@@ -14,4 +14,5 @@ export { zapDepositEstimate, zapWithdrawEstimate } from './zapEstimate';
 export { registerToken } from './registerToken';
 export { harvest } from './harvest';
 export { harvestAll } from './harvestAll';
+export {requestTestPLFY,isRequestAvailable} from './requestTestPLFY';
 
