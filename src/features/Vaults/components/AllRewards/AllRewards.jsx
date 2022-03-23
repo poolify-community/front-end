@@ -57,6 +57,7 @@ const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...p
 
 
     useEffect(() => {
+        console.log('pendingPLFY',pendingPLFY);
         let _bounty = calculatePendingPLFYandBounty(vaults,pendingPLFY);
         let _bountyUSD = _bounty.times(fetchPrice({ id: 'PLFY' }));
         setBounty(_bounty.toFormat(4));
