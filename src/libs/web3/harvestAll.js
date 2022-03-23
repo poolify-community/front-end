@@ -8,12 +8,13 @@ export const harvestAll = async ({address,web3, vaults}) => {
 };
 
 const _harvestAll = ({address,contract,vaults}) => {
+    console.log('vaults',vaults);
     let _addresses = vaults.map(x => x.vaultContractAddress);
     console.log('_addresses',_addresses);
 
   return new Promise((resolve, reject) => {
     contract.methods
-      .harvestAll([_addresses[0],_addresses[1]])
+      .harvestAll(_addresses)
       .send({ from: address })
       .on('transactionHash', function (hash) {
         console.log(hash);

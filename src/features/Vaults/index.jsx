@@ -23,6 +23,7 @@ import { useFetchBalances, useFetchVaultsData, useFetchApys,useFetchPendingPLFY 
 
 
 const FETCH_INTERVAL_MS = 15 * 1000;
+const FETCH_INTERVAL_MS_FAST = 3 * 1000;
 
 
 export default function() {
@@ -36,6 +37,18 @@ export default function() {
   const { apys, fetchApys, fetchApysDone } = useFetchApys();
   const { pendingPLFY, fetchPendingPLFY, fetchPendingPLFYDone } = useFetchPendingPLFY();
 
+  useEffect(() => {
+    const fetch = () => {
+      fetchPendingPLFY();
+    };
+    fetch();
+
+    const id = setInterval(fetch, FETCH_INTERVAL_MS_FAST);
+    return () => clearInterval(id);
+
+    // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [address, web3,fetchPendingPLFY]);
 
   useEffect(() => {
     const fetch = () => {
@@ -46,7 +59,6 @@ export default function() {
       }
       fetchVaultsData({ address, web3, pools });
       fetchApys();
-      fetchPendingPLFY();
     };
     fetch();
 
@@ -55,7 +67,7 @@ export default function() {
 
     // Adding tokens and pools to this dep list, causes an endless loop, DDoSing the api
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address, web3,fetchApys,fetchBalances, fetchVaultsData,fetchPendingPLFY]);
+  }, [address, web3,fetchApys,fetchBalances, fetchVaultsData]);
 
 
   return (
