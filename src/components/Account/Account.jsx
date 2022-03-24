@@ -12,6 +12,8 @@ import {
   ModalCloseButton,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next';
+
 import { getEllipsisTxt } from "libs/helpers/formatters";
 import { getExplorer } from "libs/helpers/networks";
 
@@ -61,14 +63,14 @@ function Account() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
   const _accountTextColor = useColorModeValue('poolify.400','poolify.400');
-
+  const { t } = useTranslation();
   const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setWeb3Modal] = useState(null);
 
 
   useEffect(() => {
-    setWeb3Modal(createWeb3Modal());
+    setWeb3Modal(createWeb3Modal(t));
   }, [setWeb3Modal]);
 
   const connectWalletCallback = useCallback(() => {

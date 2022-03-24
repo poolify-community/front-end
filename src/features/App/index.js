@@ -3,6 +3,7 @@ import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 import {
   Flex
 } from "@chakra-ui/react";
+import { useTranslation } from 'react-i18next';
 // Components
 import Navbar from 'components/Navbar/Navbar';
 import {NetworkConnectNotice} from 'components/NetworkConnectNotice/NetworkConnectNotice';
@@ -56,8 +57,7 @@ var routes = [
 
 
 function App() {
-  
-
+  const { t } = useTranslation();
   const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
   const { disconnectWallet } = useDisconnectWallet();
   const [web3Modal, setModal] = useState(null);
@@ -66,12 +66,12 @@ function App() {
   initializePriceCache();
 
   useEffect(() => {
-    setModal(createWeb3Modal());
-  }, [setModal]);
+    setModal(createWeb3Modal(t));
+  }, [setModal,t]);
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
-      connectWallet(web3Modal);
+      //connectWallet(web3Modal);
     }
   }, [web3Modal, connectWallet]);
 

@@ -58,8 +58,6 @@ export function connectWallet(web3Modal) {
         networkId = 56;
       }
 
-      console.log('HOME_CONNECT_WALLET_SUCCESS');
-
       dispatch({ type: HOME_CONNECT_WALLET_SUCCESS, data: { web3, address, networkId } });
     } catch (error) {
       console.error(error);

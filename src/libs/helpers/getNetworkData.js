@@ -91,19 +91,6 @@ export const getNetworkConnectors = t => {
               },
             },
           },
-          'custom-binance': {
-            display: {
-              name: 'Binance',
-              description: t('Binance Chain Wallet'),
-              logo: require(`images/wallets/binance-wallet.png`).default,
-            },
-            package: 'binance',
-            connector: async (ProviderPackage, options) => {
-              const provider = window.BinanceChain;
-              await provider.enable();
-              return provider;
-            },
-          },
           'custom-math': {
             display: {
               name: 'Math',
