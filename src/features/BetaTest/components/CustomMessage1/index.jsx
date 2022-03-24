@@ -69,7 +69,7 @@ const CustomMessage1 = () => {
                             </Text>
                             <Flex justifyContent={'center'}>
                                 <Button colorScheme='blue' size='lg' height='40px' mt={'10px'} width={'50%'} onClick={() => {
-                                        window.open('https://medium.com/@poolify.finance');
+                                        window.open('https://medium.com/@poolify.finance/poolify-betatest-protocol-f48021a5e543');
                                     }}>Go to Medium</Button>
                             </Flex>
                             <Heading
