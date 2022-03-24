@@ -67,9 +67,11 @@ const CustomMessage1 = () => {
                             >
                                 To proceed for testing, please check our medium article :
                             </Text>
-                            <Button colorScheme='blue' size='lg' height='40px' mt={'10px'} width={'50%'} onClick={() => {
-                                    window.open('https://medium.com/@poolify.finance');
-                                }}>Go to Medium</Button>
+                            <Flex justifyContent={'center'}>
+                                <Button colorScheme='blue' size='lg' height='40px' mt={'10px'} width={'50%'} onClick={() => {
+                                        window.open('https://medium.com/@poolify.finance');
+                                    }}>Go to Medium</Button>
+                            </Flex>
                             <Heading
                                 mt="20px"
                                 color={'black'}
