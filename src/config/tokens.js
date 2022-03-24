@@ -2,6 +2,7 @@
 export const TokenSymbol = {
     USDC : 'USDC',
     POOLIFY : 'POOLIFY',
+    PLFY : 'PLFY',
     CAKE : 'CAKE',
     BNB : 'BNB',
     ETH : 'ETH',
@@ -52,7 +53,13 @@ const tokens  = {
         name: 'POOLIFY',
         icon: '/assets/tokens/poolify.png',
         contracts:[],
-    }
+    },
+    'PLFY':{
+        chains:[],
+        name: 'PLFY',
+        icon: '/assets/tokens/poolify.png',
+        contracts:[],
+    },
 }
 
 
