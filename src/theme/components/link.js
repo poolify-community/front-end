@@ -14,6 +14,9 @@ export const linkStyles = {
       variants: {
         "poolify-links":{
           color:'poolify.400'
+        },
+        "poolify-links-white":{
+          color:'white'
         }
       },
     },

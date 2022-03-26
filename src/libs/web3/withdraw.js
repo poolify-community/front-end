@@ -1,5 +1,6 @@
 import { vaultABI } from '../config';
 import React from 'react';
+import { customHashAlert } from 'libs/helpers/notifier';
 
 //import { enqueueSnackbar } from '../common/redux/actions';
 
@@ -17,7 +18,12 @@ const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification
         .withdrawAll()
         .send({ from: address })
         .on('transactionHash', function (hash) {
-          DisplayNotification({key:toastId,message:hash,status:'success',duration:10000});
+          DisplayNotification({
+            key:toastId,
+            message:customHashAlert(networkId,hash),
+            status:'success',
+            duration:null
+          });
         })
         .on('receipt', function (receipt) {
           resolve();
@@ -35,7 +41,12 @@ const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification
         .withdraw(amount)
         .send({ from: address })
         .on('transactionHash', function (hash) {
-          DisplayNotification({key:toastId,message:hash,status:'success',duration:null});
+          DisplayNotification({
+            key:toastId,
+            message:customHashAlert(networkId,hash),
+            status:'success',
+            duration:null
+          });
         })
         .on('receipt', function (receipt) {
           resolve();

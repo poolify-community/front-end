@@ -120,6 +120,7 @@ const Deposit = function({vault,...props}){
     }
 
     const handleInputAmountChange = event => {
+        
         const input = event.target.value.replace(/[,]+/, '').replace(/[^0-9.]+/, '');
         let amount = new BigNumber(input);
         const maxAvailable = tokenBalance(depositSettings.token.symbol);
@@ -135,7 +136,7 @@ const Deposit = function({vault,...props}){
         setDepositSettings(prevState => ({
           ...prevState,
           amount: amount,
-          input: amount.isEqualTo(input) ? input : amount.toFormat(),
+          input: amount.isEqualTo(input || '0') ? input : amount.toFormat(),
           isNeedApproval: allowance.isZero(),
         }));
     };
@@ -243,7 +244,7 @@ const Deposit = function({vault,...props}){
     return (
         <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'}>
             <Flex alignItems={'center'} justifyContent={'space-between'} marginBottom={'8px'}>
-                <Text>Available Balance:</Text>
+                <Text>{t('Vault-Balance')}:</Text>
                 <Flex alignContent={'center'}>
                     <Text paddingRight={'5px'}>
                     {byDecimals(tokens[vault.token].tokenBalance, vault.tokenDecimals).toFormat(4)}{' '}
@@ -252,17 +253,18 @@ const Deposit = function({vault,...props}){
                 </Flex>
             </Flex>
             <InputGroup>
-                <InputLeftElement
+                <InputLeftElement 
+                    height={'3rem'}
                     pointerEvents='none'
                     color='gray.300'
                     fontSize='1.2em'
                 >
                     {getIconElement(vault)}
                 </InputLeftElement>
-                <Input value={depositSettings.input} onChange={handleInputAmountChange} disabled={vault.depositsPaused}
+                <Input height={'3rem'} value={depositSettings.input} onChange={handleInputAmountChange} disabled={vault.depositsPaused}
                     pattern="^[0-9]*[.,]?[0-9]{0,18}$" inputMode="decimal" min="0" placeholder="0.0" scale="md" size='lg' 
                 />
-                <InputRightElement>
+                <InputRightElement height={'3rem'}>
                     <Button onClick={selectMax} colorScheme='blue' variant='link' size='sm' flexGrow={'1'} marginLeft={'2'} marginRight={'2'}>
                         Max {/*getLPElement(vault) */}
                     </Button>
@@ -288,8 +290,8 @@ const Deposit = function({vault,...props}){
                         disabled={vault.depositsPaused || fetchApprovalPending[depositSettings.token.symbol]}
                     >
                         {fetchApprovalPending[depositSettings.token.symbol]
-                            ? `Approving`
-                            : `Approve`
+                            ? `${t('Vault-Approving')}`
+                            : `${t('Vault-ApproveButton')}`
                         }
                     </Button>
                 ):
@@ -305,7 +307,7 @@ const Deposit = function({vault,...props}){
                         }
                         onClick={handleDepositAmount}
                     >
-                        Deposit
+                        {t('Vault-DepositButton')}
                     </Button>
                 )
                 }

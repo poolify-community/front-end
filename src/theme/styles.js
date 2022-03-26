@@ -13,6 +13,10 @@ export const globalStyles = {
       400:'#3a83c1'
     }
   },
+  size:{
+    10:'2.5rem',
+    12:'3rem'
+  },
   styles: {
     global: (props) => ({
       body: {

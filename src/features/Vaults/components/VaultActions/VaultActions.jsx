@@ -16,7 +16,7 @@ const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
 
     return (
         <Box
-            border={"2px solid"} borderColor={useColorModeValue('rgb(238, 234, 244)', '#302543')}
+            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
             borderRadius={{sm:'0px',base:'16px'}}
             spacing="10px" flexShrink={0} ml={{'sm':'0px','base':'32px'}} mr={'0px'} 
             justifyContent="space-between" 
@@ -25,13 +25,13 @@ const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
             <Tabs>
                 <TabList>
                     <Tab>
-                        <Text fontWeight={'600'} fontSize={'lg'} color={useColorModeValue('poolify.400','poolify.400')}>
-                            Deposit
+                        <Text fontWeight={'600'} fontSize={'lg'} color={'poolify.400'}>
+                            {t('Vault-DepositButton')}
                         </Text>
                     </Tab>
                     <Tab>
-                        <Text fontWeight={'600'} fontSize={'lg'} color={useColorModeValue('poolify.400','poolify.400')}>
-                            Withdraw
+                        <Text fontWeight={'600'} fontSize={'lg'} color={'poolify.400'}>
+                            {t('Vault-WithdrawButton')}
                         </Text>
                     </Tab>
                 </TabList>
@@ -54,7 +54,7 @@ const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
         <>
         
         <Box
-            border={"2px solid"} borderColor={useColorModeValue('rgb(238, 234, 244)', '#302543')}
+            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
             borderRadius={{base:'0px',md:'16px'}}
             spacing="10px"  ml={{base:'0px',md:'20px'}} mr={'0px'} 
             justifyContent="space-between" 
@@ -62,7 +62,7 @@ const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
             <Deposit index={index} vault={vault}/>
         </Box>
         <Box
-            border={"2px solid"} borderColor={useColorModeValue('rgb(238, 234, 244)', '#302543')}
+            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
             borderRadius={{base:'0px',md:'16px'}}
             spacing="10px"  ml={{base:'0px',md:'20px'}} mr={{base:'0px',md:'20px'}} 
             justifyContent="space-between" 

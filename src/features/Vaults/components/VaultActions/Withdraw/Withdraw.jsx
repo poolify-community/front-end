@@ -82,7 +82,7 @@ const Withdraw = function({vault, index, sharesBalance,...props}){
         setWithdrawSettings(prevState => ({
           ...prevState,
           amount: amount,
-          input: amount.isEqualTo(input) ? input : amount.toFormat(),
+          input: amount.isEqualTo(input || '0') ? input : amount.toFormat(),
         }));
     };
 
@@ -179,18 +179,19 @@ const Withdraw = function({vault, index, sharesBalance,...props}){
             </Flex>
             <InputGroup>
                 <InputLeftElement
-                    height={'-webkit-fill-available'}
+                    height={'3rem'}
                     pointerEvents='none'
                     color='gray.300'
                     fontSize='1.2em'
                     children={getIconElement(vault)}
                 />
                 <Input 
+                    height={'3rem'}
                     value={withdrawSettings.input} onChange={handleInputAmountChange}
                     pattern="^[0-9]*[.,]?[0-9]{0,18}$" inputMode="decimal" min="0" placeholder="0.0" scale="md" size='lg' 
                 />
                 <InputRightElement
-                    height={'-webkit-fill-available'}
+                    height={'3rem'}
                     children={
                         <Button onClick={selectMax} colorScheme='blue' variant='link' size='sm' flexGrow={'1'} marginLeft={'2'} marginRight={'2'}>
                             Max {/*getLPElement(vault) */}

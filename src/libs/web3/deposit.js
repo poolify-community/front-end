@@ -1,5 +1,6 @@
 import { vaultABI } from '../config';
 //import { enqueueSnackbar } from '../common/redux/actions';
+import { customHashAlert } from 'libs/helpers/notifier';
 
 export const deposit = async ({ web3, address, isAll, amount, contractAddress, DisplayNotification,toastId }) => {
   const contract = new web3.eth.Contract(vaultABI, contractAddress);
@@ -7,14 +8,22 @@ export const deposit = async ({ web3, address, isAll, amount, contractAddress, D
   return data;
 };
 
+
+
 const _deposit = ({ web3, contract, amount, isAll, address, DisplayNotification,toastId }) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
+    let networkId = await web3.eth.net.getId();
     if (isAll) {
       contract.methods
         .depositAll()
         .send({ from: address })
         .on('transactionHash', function (hash) {
-          DisplayNotification({key:toastId,message:hash,status:'success',duration:10000});
+          DisplayNotification({
+            key:toastId,
+            message:customHashAlert(networkId,hash),
+            status:'success',
+            duration:null
+          });
         })
         .on('receipt', function (receipt) {
           resolve();
@@ -31,7 +40,12 @@ const _deposit = ({ web3, contract, amount, isAll, address, DisplayNotification,
         .send({ from: address })
         .on('transactionHash', function (hash) {
           console.log(hash);
-          DisplayNotification({key:toastId,message:hash,status:'success',duration:10000});
+          DisplayNotification({
+            key:toastId,
+            message:customHashAlert(networkId,hash),
+            status:'success',
+            duration:null
+          });
         })
         .on('receipt', function (receipt) {
           console.log(receipt);
