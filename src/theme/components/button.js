@@ -2,6 +2,15 @@ export const buttonStyles = {
   components: {
     Button: {
       variants: {
+        "wallet-connection":{
+          backgroundColor:'black',
+          color:'white',
+          marginLeft:'2px',
+          marginRight:'2px',
+          _hover: {
+            backgroundColor:'poolify.600',
+          },
+        },
         "poolify-slider":{
           backgroundColor:'poolify.400',
           color:'white',
@@ -36,7 +45,8 @@ export const buttonStyles = {
         },
       },
       baseStyle: {
-        borderRadius: "15px",
+        borderRadius: "0px",
+        margin:"5px",
         _focus: {
           boxShadow: "none",
         },

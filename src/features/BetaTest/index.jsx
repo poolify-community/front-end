@@ -26,7 +26,7 @@ function BetaTest() {
                       <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
                         flexDirection={isOneLineMode?'row':'column'}
                       >
-                          <Heading size={'4xl'} color={'black'}> Beta Test </Heading>
+                          <Heading size={'3xl'} color={'black'}  mb="5px"> Beta Test </Heading>
                           {/* <NetworksToggle></NetworksToggle> */}
                           <GeneratePLFY />
                       </Flex>

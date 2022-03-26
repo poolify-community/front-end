@@ -3,14 +3,14 @@ import { networkSettings, networkSetup } from 'libs/helpers/networkSetup';
 import { getNetworkAppUrl, getNetworkFriendlyName } from 'libs/helpers/getNetworkData';
 import { useTranslation } from 'react-i18next';
 import {
-  Button
+  Button,Box
 } from "@chakra-ui/react";
 
 const targetNetworkId = window.REACT_APP_NETWORK_ID;
 
 const styles = {
   notice: {
-    backgroundColor: '#f5f5f7',
+    //background: '#f5f5f7',
     padding: 25,
     marginBottom: 25,
     marginTop:15,
@@ -22,7 +22,7 @@ const styles = {
   },
   message: {
     marginBottom: 15,
-    fontSize: '28px',
+    fontSize: '24px',
     lineHeight: '1.10722',
     fontWeight: '400'
   },
@@ -30,13 +30,13 @@ const styles = {
     margin: '-10px -10px 15px 0',
   },
   button: {
-    border: '1px solid black',
     padding: '4px 8px',
-    backgroundColor: 'black',
     textTransform: 'none',
     margin: '10px 10px 0 0',
     color:'white',
-    borderRadius: '980px'
+    '&:hover':{
+      background:'red'
+    }
   },
   note: {
     marginBottom: 15,
@@ -103,7 +103,7 @@ export function NetworkConnectNotice({
           {t('Network-ConnectionRequired', { network: targetNetworkFriendlyName })}
         </div>
         <div style={styles.actions}>
-          <Button onClick={connectWallet} style={styles.button}>
+          <Button onClick={connectWallet} style={styles.button} variant={'wallet-connection'}>
             {t('Network-ConnectWallet')}
           </Button>
         </div>
@@ -119,18 +119,18 @@ export function NetworkConnectNotice({
             : t('Network-ConnectedUnsupported')}
         </div>
         <div style={styles.actions}>
-          <Button onClick={targetNetworkSetup} style={styles.button}>
+          <Button onClick={targetNetworkSetup} style={styles.button} variant={'wallet-connection'}>
             {t('Network-SwitchToNetwork', { network: targetNetworkFriendlyName })}
           </Button>
           {isSupportedNetwork ? (
             <Button
               onClick={() => networkRedirect(supportedNetwork.url)}
-              style={styles.button}
+              style={styles.button} variant={'wallet-connection'}
             >
               {t('Network-GoToApp', { network: supportedNetwork.name })}
             </Button>
           ) : null}
-          <Button onClick={disconnectWallet} style={styles.button}>
+          <Button onClick={disconnectWallet} style={styles.button} variant={'wallet-connection'}>
             {t('Network-DisconnectWallet')}
           </Button>
         </div>
@@ -149,5 +149,7 @@ export function NetworkConnectNotice({
     );
   }
 
-  return notice ? <div style={styles.notice}>{notice}</div> : null;
+  return notice ? 
+      <Box style={styles.notice} w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }} bg={'poolify.400'}>{notice}</Box> 
+      : null;
 }

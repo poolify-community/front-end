@@ -87,16 +87,26 @@ function App() {
   
   return (
     <AppLayout 
-        header={<Navbar routes={routes}/>}
+        header={
+          <Navbar 
+            routes={routes} 
+            address={address}
+            connected={connected}
+            connectWallet={connectWalletCallback}
+            disconnectWallet={disconnectWalletCallback}
+          />
+        }
         body={(
           <Flex flexDir={'column'}>
-            <NetworkConnectNotice 
-              web3={web3}
-              address={address}
-              connectWallet={connectWalletCallback}
-              disconnectWallet={disconnectWalletCallback}
-              networkId={networkId}
-            />
+            <Flex justifyContent={'center'} >
+              <NetworkConnectNotice 
+                web3={web3}
+                address={address}
+                connectWallet={connectWalletCallback}
+                disconnectWallet={disconnectWalletCallback}
+                networkId={networkId}
+              />
+            </Flex>
                 {networkId === window.REACT_APP_NETWORK_ID ? Center : null}
           </Flex>
         )}

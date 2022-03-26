@@ -15,8 +15,10 @@ import { PanelContentComponent } from "./additions/layout/PanelContent";
 import { PanelContainerComponent } from "./additions/layout/PanelContainer";
 // import { mode } from "@chakra-ui/theme-tools";
 
-let newTheme = {
-  breakpoints, // Breakpoints
+
+export default extendTheme(
+  { breakpoints }, // Breakpoints
+  globalStyles,
   fonts, // Global styles
   buttonStyles, // Button styles
   textStyles, // Text Styles
@@ -28,11 +30,6 @@ let newTheme = {
   CardHeaderComponent, // Card Header component
   MainPanelComponent, // Main Panel component
   PanelContentComponent, // Panel Content component
-  PanelContainerComponent, // Panel Container component
-  ...globalStyles
-};
-
-console.log('newTheme',newTheme)
-
-export default extendTheme(newTheme);
+  PanelContainerComponent // Panel Container component
+);
 

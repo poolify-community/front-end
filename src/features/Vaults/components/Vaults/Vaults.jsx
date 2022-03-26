@@ -3,6 +3,7 @@ import {
     Center,
     useColorModeValue,
     Heading,
+    Text,
     Accordion
 } from "@chakra-ui/react";
 
@@ -69,12 +70,13 @@ export default function VaultList({vaults,tokens,apys,pendingPLFY,fetchBalancesD
                     ))
                 ) : (
                     <Center>
-                        <Heading
+                        <Text
                             size="md"
+                            fontStyle={'italic'}
                             color={_headingColor}
                         >
                             No vaults to display.
-                        </Heading>
+                        </Text>
                     </Center>
                 )}
 
@@ -94,12 +96,13 @@ export default function VaultList({vaults,tokens,apys,pendingPLFY,fetchBalancesD
                     ))
                 ) : (
                     <Center>
-                        <Heading
+                        <Text
                             size="md"
+                            fontStyle={'italic'}
                             color={_headingColor}
                         >
                             No vaults to display.
-                        </Heading>
+                        </Text>
                     </Center>
                 )}
 

@@ -76,7 +76,7 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
         <Card>
             <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minW={'350px'} >
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
-                    <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'center'}>
+                    <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
                         <Heading size={'md'} color={'black'}> Request PLFY</Heading>
                         <Text fontStyle={'italic'}>This is only for the TEST Net</Text>
                     </Flex>

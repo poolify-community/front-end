@@ -7,7 +7,6 @@ const CustomMessage1 = () => {
         <Flex w="100%" direction="column">
             <Flex
                 bg={'black'}
-                borderRadius="19px"
                 position="relative"
                 w="312px"
                 h="38px"
@@ -39,7 +38,7 @@ const CustomMessage1 = () => {
                                 mb={{ base: '12px', lg: 'unset' }}
                                 pl={{ base: '10px', lg: 'unset' }}
                             >
-                                Time to test our protocol on the BSC Test Net
+                                Time to test our protocol on the BSC Test
                             </Heading>
                             <Heading
                                 mt="20px"

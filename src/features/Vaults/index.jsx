@@ -79,7 +79,7 @@ export default function() {
                     <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
                       flexDirection={isOneLineMode?'row':'column'}
                     >
-                        <Heading size={'4xl'} color={'black'}> Vaults </Heading>
+                        <Heading size={'3xl'} color={'black'} mb="5px"> Vaults </Heading>
                         {/* <NetworksToggle></NetworksToggle> */}
                         <AllRewards tokens={tokens} vaults={pools} pendingPLFY={pendingPLFY} fetchPendingPLFYDone={fetchPendingPLFYDone}/>
                     </Flex>

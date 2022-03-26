@@ -6,7 +6,7 @@ export const allNetworks = [
       hash: '/bsc',
     },
     {
-      name: 'BSC Test Net',
+      name: 'BSC Test',
       asset: 'BSC',
       id: 97,
       hash: '/testbsc',

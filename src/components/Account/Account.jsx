@@ -1,42 +1,24 @@
-import { useEffect,useState,useCallback } from "react";
-import { ExternalLinkIcon, CopyIcon } from "@chakra-ui/icons";
 import {
-  Flex,Link,
   Text,Button,Box,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   useColorModeValue,
+  useBreakpointValue
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next';
 
 import { getEllipsisTxt } from "libs/helpers/formatters";
-import { getExplorer } from "libs/helpers/networks";
 
 import Blockie from "Blockie";
-import Address from "components/Address/Address";
-
-import { connectors } from "./config";
-import { useModal } from 'providers/ModalProvider';
-
-import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
-import { createWeb3Modal } from 'libs/web3';
-
 const styles = {
   account: {
     height: "42px",
-    padding: "0 15px",
+    padding: "5px 5px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "fit-content",
-    borderRadius: "12px",
     backgroundColor: "rgb(244, 244, 244)",
     cursor: "pointer",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   connector: {
     alignItems: "center",
@@ -46,7 +28,8 @@ const styles = {
     justifyContent: "center",
     marginLeft: "auto",
     marginRight: "auto",
-    padding: "20px 5px",
+    padding: "10px 5px",
+    height: "42px",
     cursor: "pointer",
   },
   icon: {
@@ -58,46 +41,29 @@ const styles = {
   }
 };
 
-function Account() {
-  const { setModal } = useModal();
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
+function Account({address,connected,connectWallet,disconnectWallet}) {
+  const isOneLineMode = useBreakpointValue({ base: false, xl: true });
   const _accountTextColor = useColorModeValue('poolify.400','poolify.400');
   const { t } = useTranslation();
-  const { connectWallet, web3, address, networkId, connected } = useConnectWallet();
-  const { disconnectWallet } = useDisconnectWallet();
-  const [web3Modal, setWeb3Modal] = useState(null);
-
-
-  useEffect(() => {
-    setWeb3Modal(createWeb3Modal(t));
-  }, [setWeb3Modal]);
-
-  const connectWalletCallback = useCallback(() => {
-    connectWallet(web3Modal);
-  }, [web3Modal, connectWallet]);
-
-  const disconnectWalletCallback = useCallback(() => {
-    disconnectWallet(web3, web3Modal);
-  }, [web3, web3Modal, disconnectWallet]);
 
 
   //console.log('test', isAuthenticated, account, chainId);
   if (!connected || !address) {
     return (
       <>
-        <div style={styles.connector} onClick={connectWalletCallback}>
+        <Button style={styles.connector} onClick={connectWallet} bg={'gray.100'} w={'100%'} mt={isOneLineMode?'':'10px'}>
           <Text
               variant="caption-bold"
               fontWeight={'bold'}
               flexShrink={0}
           > Authenticate </Text>
-        </div>
+        </Button>
       </>
     );
   }
   
   const title = ('Account')
+  /*
   const body  = (
     <Box
       borderRadius="3xl"
@@ -130,7 +96,7 @@ function Account() {
             textDecoration: "underline",
           }}
           onClick={async () => {
-            await disconnectWalletCallback();
+            await disconnectWallet();
             setIsModalVisible(false);
           }}
         >
@@ -165,6 +131,7 @@ function Account() {
       </Flex>
     </Box>
   );
+  */
   const footer = (
     <Text
       color="#222528"
@@ -178,18 +145,12 @@ function Account() {
   )
 
   return (
-    <>
-     
-      <div style={styles.account} onClick={() => {
-        disconnectWalletCallback();//setModal(title,body,footer);
-      }}>
-        <Text mr={'5px'} color={_accountTextColor}>
-          {getEllipsisTxt(address, 6)}
-        </Text>
-        <Blockie currentWallet scale={3} />
-      </div>
-    
-    </>
+    <Box style={styles.account}  bg={'gray.100'} w={'100%'} mt={isOneLineMode?'':'10px'} onClick={disconnectWallet}>
+      <Text mr={'5px'} color={_accountTextColor}>
+        {getEllipsisTxt(address, 6)}
+      </Text>
+      <Blockie currentWallet scale={3} />
+    </Box>
   );
 }
 

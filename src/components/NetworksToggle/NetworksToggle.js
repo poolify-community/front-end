@@ -4,7 +4,7 @@ import { allNetworks } from 'libs/helpers/networkPicklist';
 import {
   Flex,
   Img,Button,Text,
-  Menu,MenuButton,MenuList,MenuItem
+  Menu,MenuButton,MenuList,MenuItem,useBreakpointValue
 } from '@chakra-ui/react';
 import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
 
@@ -30,7 +30,9 @@ const styles = {
   },
 };
 
-const NetworksToggle = memo(function () {
+const NetworksToggle = memo(function ({width}) {
+
+  const isOneLineMode = useBreakpointValue({ base: false, xl: true });
   const currentNetwork = useMemo(
     () => allNetworks.find(network => network.id === window.REACT_APP_NETWORK_ID),
     []
@@ -55,7 +57,7 @@ const NetworksToggle = memo(function () {
     <Menu>
       {({ isOpen }) => (
         <>
-          <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} w={'200px'}>
+          <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} w={isOneLineMode?width:'100%'} height={'42px'} bg={'gray.100'}>
             {isOpen ? 'Select Network' : (
               <Flex alignItems={'center'}>
                 <Img src={getSingleAssetSrc(currentNetwork.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
@@ -63,12 +65,12 @@ const NetworksToggle = memo(function () {
               </Flex>
             )}
           </MenuButton>
-          <MenuList>
+          <MenuList >
             {allNetworks.map((network, key) => (
               <MenuItem onClick={() => handleNetworkClick(network)} key={key}>
                 <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
                 <Text ml={'10px'}>{network.name}</Text>
-                </MenuItem>
+              </MenuItem>
             ))}
           </MenuList>
         </>
