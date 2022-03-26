@@ -71,7 +71,7 @@ function App() {
 
   useEffect(() => {
     if (web3Modal && (web3Modal.cachedProvider || window.ethereum)) {
-      //connectWallet(web3Modal);
+      connectWallet(web3Modal);
     }
   }, [web3Modal, connectWallet]);
 

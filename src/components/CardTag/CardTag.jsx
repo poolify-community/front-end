@@ -35,6 +35,7 @@ export default (props) => {
             fontSize="12px"
             lineHeight="15px"
             fontWeight="600"
+            borderRadius={'.25rem'}
             fontFamily="Montserrat"
             {...rest}
         >

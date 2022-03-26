@@ -45,7 +45,7 @@ export const buttonStyles = {
         },
       },
       baseStyle: {
-        borderRadius: "0px",
+        borderRadius: ".25rem",
         margin:"5px",
         _focus: {
           boxShadow: "none",
