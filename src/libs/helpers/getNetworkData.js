@@ -23,7 +23,7 @@ const networkTxUrls = {
 
 const networkFriendlyName = {
   56: 'BSC',
-  97: 'BSCTestNet',
+  97: 'BSC Test',
   128: 'HECO',
   43114: 'AVAX',
   137: 'Polygon',

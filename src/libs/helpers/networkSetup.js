@@ -1,3 +1,5 @@
+import detectEthereumProvider from '@metamask/detect-provider';
+
 export const networkSettings = {
   56: {
     chainId: `0x${parseInt(56, 10).toString(16)}`,
@@ -35,8 +37,8 @@ export const networkSettings = {
 };
   
 export const networkSetup = chainId => {
-  return new Promise((resolve, reject) => {
-    const provider = window.ethereum;
+  return new Promise(async (resolve, reject) => {
+    const provider = await detectEthereumProvider();
     if (provider) {
       if (networkSettings.hasOwnProperty(chainId)) {
         provider

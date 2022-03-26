@@ -150,6 +150,6 @@ export function NetworkConnectNotice({
   }
 
   return notice ? 
-      <Box style={styles.notice} w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }} bg={'poolify.400'}>{notice}</Box> 
+      <Box style={styles.notice} w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }} bg={'poolify.200'}>{notice}</Box> 
       : null;
 }

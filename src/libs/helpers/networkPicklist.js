@@ -3,19 +3,19 @@ export const allNetworks = [
       name: 'BSC',
       asset: 'BSC',
       id: 56,
-      hash: '/bsc',
+      hash: 'bsc',
     },
     {
       name: 'BSC Test',
       asset: 'BSC',
       id: 97,
-      hash: '/testbsc',
+      hash: 'testbsc',
     },
     {
       name: 'local',
       asset: 'BSC',
       id: 1337,
-      hash: '/local',
+      hash: 'local',
     },
 /*    {
       name: 'HECO',
