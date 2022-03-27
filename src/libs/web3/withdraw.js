@@ -12,7 +12,8 @@ export const withdraw = async ({ web3, address, isAll, amount, contractAddress, 
 
 const _withdraw = ({ web3, contract, address, isAll, amount, DisplayNotification,toastId}) => {
 
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
+    let networkId = await web3.eth.net.getId();
     if (isAll) {
       contract.methods
         .withdrawAll()

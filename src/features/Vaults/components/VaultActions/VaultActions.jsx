@@ -6,13 +6,14 @@ import {
     useBreakpointValue,
     Tabs,Tab,TabList,TabPanels,TabPanel,
 } from "@chakra-ui/react";
-
+import { useTranslation } from 'react-i18next';
 import Deposit from './Deposit/Deposit';
 import Withdraw from "./Withdraw/Withdraw";
 
 
 
 const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
+    const { t } = useTranslation();
 
     return (
         <Box
@@ -49,6 +50,7 @@ const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
 }
 
 const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) => {
+    const { t } = useTranslation();
 
     return (
         <>
