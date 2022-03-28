@@ -7,7 +7,7 @@ const AppLayout = (props) => {
             w="100%"
             h="100%"
             minHeight={'100vh'}
-            bg={'#fbfbfd'}
+            bg={'#ededf2'}//#fbfbfd
             spacing="0"
         >
             <Flex position={'fixed'} w={'100%'} className="appLayout-header" zIndex={'200'}>

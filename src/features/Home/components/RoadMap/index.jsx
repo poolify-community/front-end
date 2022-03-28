@@ -4,8 +4,9 @@ import Card from 'components/Card/Card';
 
 const styles = {
     statCard:{
-        'background': 'rgb(253, 254, 255)',
-        'box-shadow': 'rgb(218 206 230 / 25%) 0px 0px 27px 5px'
+        'background': '#ededf2',
+        'box-shadow': 'rgb(218 206 230 / 25%) 0px 0px 27px 5px',
+        'border':'1px solid #d1d1d1'
     }
 }
 

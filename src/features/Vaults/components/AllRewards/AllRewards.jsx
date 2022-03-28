@@ -102,7 +102,7 @@ const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...p
                         </Flex>
                     </Flex>
                     <Flex justifyContent={'center'} alignItems={'center'} flexDirection={'column'} mt={'5px'}>
-                        <Button colorScheme='blue' size='lg' height='40px' w={'100px'} onClick={claimBounty}>
+                        <Button colorScheme='blue' size='lg' height='40px' w={'100%'} onClick={claimBounty}>
                             Claim 
                         </Button>
                     </Flex>

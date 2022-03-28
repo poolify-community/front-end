@@ -9,7 +9,7 @@ import { networkSettings } from 'libs/helpers/networkSetup';
 
 export const customHashAlert = (networkId,transaction) => {
   return (
-    <Link href={`${networkSettings[networkId].blockExplorerUrls}/tx/${transaction}`} isExternal variant={'poolify-links-white'}>
+    <Link href={`${networkSettings[networkId].blockExplorerUrls}/tx/${transaction}`} isExternal variant={'poolify-links-green'}>
       See transaction <ExternalLinkIcon mx='2px' />
     </Link>
   )

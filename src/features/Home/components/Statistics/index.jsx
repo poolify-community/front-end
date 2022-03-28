@@ -4,8 +4,9 @@ import Card from 'components/Card/Card';
 
 const styles = {
     statCard:{
-        'background': 'rgb(253, 254, 255)',
-        'box-shadow': 'rgb(218 206 230 / 25%) 0px 0px 27px 5px'
+        background: '#ededf2',
+        'box-shadow': 'rgb(218 206 230 / 25%) 0px 0px 27px 5px',
+        border:'1px #d1d1d1 solid',
     }
 }
 
@@ -33,38 +34,39 @@ const Statistics = () => {
                     <Heading size={'md'}>Statistics</Heading>
                 </Flex>
                 <Flex flexDirection={isOneLineMode?'row':'column'} justifyContent={isOneLineMode?'center':'normal'}>
-                <Card margin={'10px'} style={styles.statCard}>
-                    <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
-                        <Flex flexDirection={'column'} overflowY={'auto'}>
-                            <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                                <Heading size={'md'} color={'black'}> Ecosystem TVL</Heading>
-                                <Text>300.000,456 $</Text>
+                    <Card margin={'10px'} style={styles.statCard}>
+                        <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
+                            <Flex flexDirection={'column'} overflowY={'auto'}>
+                                <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
+                                    <Heading size={'2xl'} color={'black'}> PLFY Price</Heading>
+                                    <Heading size={'lg'} color={'poolify.400'}>0.0041 $</Heading>
+                                </Flex>
                             </Flex>
                         </Flex>
-                    </Flex>
-                </Card>
-                <Card margin={'10px'} style={styles.statCard}>
-                    <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
-                        <Flex flexDirection={'column'} overflowY={'auto'}>
-                            <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                                <Heading size={'md'} color={'black'}> PLFY Price</Heading>
-                                <Text>0.0041 $</Text>
+                    </Card>
+                    <Flex flexDirection={'column'} justifyContent={'normal'} flex={'0 0 50%'}>
+                        <Card margin={'10px'} style={styles.statCard}>
+                            <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
+                                <Flex flexDirection={'column'} overflowY={'auto'}>
+                                    <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
+                                        <Heading size={'md'} color={'black'}> Ecosystem TVL</Heading>
+                                        <Text>300.000,456 $</Text>
+                                    </Flex>
+                                </Flex>
                             </Flex>
-                        </Flex>
-                    </Flex>
-                </Card>
-                <Card margin={'10px'} style={styles.statCard}>
-                    <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
-                        <Flex flexDirection={'column'} overflowY={'auto'}>
-                            <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                                <Heading size={'md'} color={'black'}> Governance</Heading>
-                                <Text>No open proposition</Text>
+                        </Card>
+                        <Card margin={'10px'} style={styles.statCard}>
+                            <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
+                                <Flex flexDirection={'column'} overflowY={'auto'}>
+                                    <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
+                                        <Heading size={'md'} color={'black'}> Governance</Heading>
+                                        <Text>No open proposition</Text>
+                                    </Flex>
+                                </Flex>
                             </Flex>
-                        </Flex>
+                        </Card>
                     </Flex>
-                </Card>
-                
-            </Flex>
+                </Flex>
             </Flex>
         </Card>
     );

@@ -17,6 +17,9 @@ export const linkStyles = {
         },
         "poolify-links-white":{
           color:'white'
+        },
+        "poolify-links-green":{
+          color:'green.500'
         }
       },
     },
