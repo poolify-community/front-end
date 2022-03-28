@@ -13,7 +13,7 @@ const Roadmap = () => {
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
 
     return (
-        <Card mt={'50px'} padding="24px" maxWidth={'800px'} minWidth={isOneLineMode?'800px':''}>
+        <Card mt={'50px'} padding="24px" maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'}>
             <Flex  direction="column">
                 <Flex
                     bg={'poolify.400'}
