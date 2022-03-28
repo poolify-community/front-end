@@ -41,8 +41,9 @@ export default function NavbarDesktop({address,connected,connectWallet,disconnec
     let inactiveColor = "black";
 
     return routes.map((prop, key) => {
+      let _url = prop.path + window.location.hash;
       return (
-        <NavLink to={prop.path} key={key}>
+        <NavLink to={_url} key={key}>
           <Button key={key} 
               variant="ghost" leftIcon={prop.leftIcon} fontSize={{sm:"xl",base:'sm'}}
               color={activeRoute(prop.path) === "active" ?activeColor:inactiveColor}

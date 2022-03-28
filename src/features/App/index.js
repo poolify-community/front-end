@@ -10,7 +10,7 @@ import {NetworkConnectNotice} from 'components/NetworkConnectNotice/NetworkConne
 
 // Views
 //import Home from 'views/Home/Home';
-import Dashboard from 'features/Dashboard';
+import Home from 'features/Home';
 import Vaults from 'features/Vaults';
 import BetaTest from 'features/BetaTest';
 //import CrowdNFT from 'views/CrowdNFT/CrowdNFT';
@@ -24,12 +24,11 @@ import { createWeb3Modal,initializePriceCache } from 'libs/web3';
 
 // CSS
 import './App.css';
-import "./index.css";
 
 
 const Center = (
   <Routes>
-      <Route path="/"  element={<Dashboard />}/>
+      <Route path="/"  element={<Home />}/>
       {/* <Route path="/vaults"  element={<Vaults />}/> */}
       <Route path="/vaults"  element={<Vaults />}/>
       <Route path="/BetaTest"  element={<BetaTest />}/>
@@ -41,7 +40,7 @@ const Center = (
 var routes = [
   {
     path: "/",
-    name: "Dashboard",
+    name: "Home",
   },
   {
     path: "/vaults",
@@ -49,7 +48,7 @@ var routes = [
   },
   {
     path: "/BetaTest",
-    name: "BetaTest",
+    name: "Beta Test",
   }
 ];
 

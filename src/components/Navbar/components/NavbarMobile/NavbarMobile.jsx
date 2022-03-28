@@ -59,15 +59,6 @@ import {
         >
           <Flex alignItems="center" justifyContent="space-between" mx="auto">
             <HStack spacing={4} display="flex" alignItems="center">
-              <Box display={{ base: "inline-flex", md: "none" }}>
-                <IconButton
-                  display={{ base: "flex", md: "none" }}
-                  aria-label="Open menu" fontSize="20px"
-                  color={'gray.800'} variant="ghost"
-                  icon={<AiOutlineMenu />}
-                  onClick={onOpen}
-                />
-              </Box>
               <chakra.a
                 href={`${process.env.PUBLIC_URL}/#/`}
                 title="Choc Home Page"
@@ -79,6 +70,15 @@ import {
               </chakra.a>
               <chakra.h1 fontSize="xl">Poolify Finance</chakra.h1>
             </HStack>
+            <Box display={{ base: "inline-flex", md: "none" }}>
+                <IconButton
+                  display={{ base: "flex", md: "none" }}
+                  aria-label="Open menu" fontSize="20px"
+                  color={'gray.800'} variant="ghost"
+                  icon={<AiOutlineMenu />}
+                  onClick={onOpen}
+                />
+              </Box>
           </Flex>
         </chakra.header>
         

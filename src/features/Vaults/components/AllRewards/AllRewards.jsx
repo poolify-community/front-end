@@ -81,7 +81,7 @@ const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...p
 
     return (
         <Card>
-            <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} >
+            <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minWidth={'350px'}>
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
                         <Heading size={'md'} color={'black'}> Claim PLFY Bounty</Heading>

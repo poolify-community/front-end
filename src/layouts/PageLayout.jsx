@@ -10,7 +10,6 @@ const PageLayout = (props) => {
                 pr={{ base: '10px', xlp1: '100px' }}
                 pl={{ base: '10px', xlp1: '100px' }}
                 h="100%"
-                w="100%"
                 overflowY="scroll"
                 css={{
                     '&::-webkit-scrollbar': {
@@ -20,7 +19,7 @@ const PageLayout = (props) => {
                 justifyContent={{ base: 'space-between', '2xl': 'center' }}
                 position="relative"
             >
-                <VStack w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }}>
+                <VStack w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1200px' }}>
                     <Box
                         w={'full'}
                         rounded={'lg'}

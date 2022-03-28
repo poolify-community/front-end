@@ -10,7 +10,7 @@ const targetNetworkId = window.REACT_APP_NETWORK_ID;
 
 const styles = {
   notice: {
-    //background: '#f5f5f7',
+    //background: '#73a8d54a',
     padding: 25,
     marginBottom: 25,
     marginTop:15,
@@ -150,6 +150,6 @@ export function NetworkConnectNotice({
   }
 
   return notice ? 
-      <Box style={styles.notice} w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }} bg={'poolify.200'}>{notice}</Box> 
+      <Box style={styles.notice} w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1400px' }}>{notice}</Box> 
       : null;
 }

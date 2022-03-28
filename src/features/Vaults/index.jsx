@@ -2,8 +2,7 @@ import React,{useEffect} from 'react';
 import {
   Box,
   Flex,
-  Heading,
-  Stack
+  Heading
 } from '@chakra-ui/react';
 import { useBreakpointValue } from '@chakra-ui/media-query';
 
@@ -26,7 +25,7 @@ const FETCH_INTERVAL_MS = 15 * 1000;
 const FETCH_INTERVAL_MS_FAST = 3 * 1000;
 
 
-export default function() {
+const VaultsComponent = function() {
   const isOneLineMode = useBreakpointValue({ base: false, lg: true });
 
   /** Vaults informations **/
@@ -89,7 +88,7 @@ export default function() {
         />
       }
       body={
-        <Stack w="100%">
+        <Box maxWidth={'1200px'} >
             {/* <Filters /> */}
             <Box h="10px" />
             <Vaults 
@@ -102,8 +101,10 @@ export default function() {
               fetchPendingPLFYDone={fetchPendingPLFYDone}
               fetchApysDone={fetchApysDone}
             />
-        </Stack>
+        </Box>
       }
     />
   );
 }
+
+export default VaultsComponent;
