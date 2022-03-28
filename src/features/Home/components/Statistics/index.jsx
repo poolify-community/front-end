@@ -30,7 +30,7 @@ const Statistics = () => {
                     color={'#FFFFFF'}
                     top={'-43px'}
                 >
-                    <Heading size={'lg'}>Statistics</Heading>
+                    <Heading size={'md'}>Statistics</Heading>
                 </Flex>
                 <Flex flexDirection={isOneLineMode?'row':'column'} justifyContent={isOneLineMode?'center':'normal'}>
                 <Card margin={'10px'} style={styles.statCard}>

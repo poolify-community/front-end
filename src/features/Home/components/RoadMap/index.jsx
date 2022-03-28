@@ -30,7 +30,7 @@ const Roadmap = () => {
                     color={'#FFFFFF'}
                     top={'-43px'}
                 >
-                    <Heading size={'lg'}>Road map</Heading>
+                    <Heading size={'md'}>Road map</Heading>
                 </Flex>
                 <Flex flexDirection={'column'} justifyContent={isOneLineMode?'center':'normal'}>
 

@@ -22,7 +22,7 @@ const CustomMessage1 = () => {
                     color={'#FFFFFF'}
                     top={'-43px'}
                 >
-                    <Heading>Instructions</Heading>
+                    <Heading size={'md'}>Instructions</Heading>
                 </Flex>
                 <Flex w="100%" overflow="hidden">
                     <Box
