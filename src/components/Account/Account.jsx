@@ -17,6 +17,7 @@ const styles = {
     alignItems: "center",
     backgroundColor: "rgb(244, 244, 244)",
     cursor: "pointer",
+    borderRadius : "0.75rem"
   },
   connector: {
     alignItems: "center",
@@ -29,6 +30,7 @@ const styles = {
     padding: "10px 5px",
     height: "42px",
     cursor: "pointer",
+    borderRadius : "0.75rem"
   },
   icon: {
     alignSelf: "center",
