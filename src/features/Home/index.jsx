@@ -12,8 +12,10 @@ import Header from 'components/Header/Header';
 import Statistics from 'features/Home/components/Statistics';
 import Protocol from 'features/Home/components/Protocol';
 import RoadMap from 'features/Home/components/RoadMap';
+import Card from 'components/Card/Card';
 
-
+//#fbfbfd
+//
 function Home() {
   
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
@@ -23,11 +25,13 @@ function Home() {
           <Header
               title={
                   <>
+                    <Card padding={'20px'} variant={'poolifyBackground'}>
                       <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-evenly'} 
                         flexDirection={isOneLineMode?'row':'column'} 
                       >
                           <Protocol />
                       </Flex>
+                    </Card>
                   </>
               }
               subtitle=""

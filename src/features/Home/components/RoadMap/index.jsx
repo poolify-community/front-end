@@ -2,48 +2,25 @@ import { Box, Flex, Heading, Text,Button,Image, Link,useBreakpointValue } from '
 import Card from 'components/Card/Card';
 
 
-const styles = {
-    statCard:{
-        'background': '#ededf2',
-        'box-shadow': 'rgb(218 206 230 / 25%) 0px 0px 27px 5px',
-        'border':'1px solid #d1d1d1'
-    }
-}
-
 const Roadmap = () => {
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
 
     return (
-        <Card mt={'50px'} padding="24px" maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'}>
+        <Card mt={'50px'} padding="24px" maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'} variant="none">
             <Flex  direction="column">
-                <Flex
-                    bg={'poolify.400'}
-                    position="relative"
-                    w="312px"
-                    h="38px"
-                    mb="23px"
-                    borderRadius={'20px'}
-                    lineHeight="38px"
-                    alignItems="center"
-                    justifyContent="center"
-                    mx="auto"
-                    padding={'10px'}
-                    color={'#FFFFFF'}
-                    top={'-43px'}
-                >
-                    <Heading size={'md'}>Road map</Heading>
-                </Flex>
                 <Flex flexDirection={'column'} justifyContent={isOneLineMode?'center':'normal'}>
+
+                    <Heading margin={'10px'} textAlign={'left'} color={'#304073'}>Roadmap</Heading>
 
                     <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
                         <Flex flexDirection={'column'} overflowY={'auto'}>
                             <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                                <Heading size={'md'} color={'black'}> 1. Implement the core protocol on the Binance Smart Chain network</Heading>
+                                <Heading size={'md'}> 1. Implement the core protocol on the Binance Smart Chain network</Heading>
                             </Flex>
                         </Flex>
                     </Flex>
 
-                    <Card margin={'10px'} style={styles.statCard}>
+                    <Card margin={'10px'} variant={'poolifyBackground'}>
                         <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
                             <Flex flexDirection={'column'} overflowY={'auto'}>
                                 <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
@@ -53,7 +30,7 @@ const Roadmap = () => {
                         </Flex>
                     </Card>
 
-                    <Card margin={'10px'} style={styles.statCard}>
+                    <Card margin={'10px'} variant={'poolifyBackground'}>
                         <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
                             <Flex flexDirection={'column'} overflowY={'auto'}>
                                 <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
@@ -63,7 +40,7 @@ const Roadmap = () => {
                         </Flex>
                     </Card>
 
-                    <Card margin={'10px'} style={styles.statCard}>
+                    <Card margin={'10px'} variant={'poolifyBackground'}>
                         <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
                             <Flex flexDirection={'column'} overflowY={'auto'}>
                                 <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>

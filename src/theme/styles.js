@@ -20,12 +20,12 @@ export const globalStyles = {
   styles: {
     global: (props) => ({
       body: {
-        fontFamily: 'SF Pro Text',
-        color:'#1d1d1f',
+        fontFamily: 'Kanit, sans-serif',
+        color:'#1a1e2c',
       },
       html: {
-        fontFamily: 'SF Pro Text',
-        color:'#1d1d1f'
+        fontFamily: 'Kanit, sans-serif',
+        color:'#1a1e2c'
       }
     }),
   },

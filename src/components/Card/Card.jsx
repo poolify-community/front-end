@@ -7,7 +7,7 @@ const Card = chakra((props) => {
     const themeColor = {
         base: {
             bg: useColorModeValue('white', '#34294A'),
-            boxShadow: useColorModeValue('base', 'undefined'),
+            boxShadow: useColorModeValue('lg', 'undefined'),
         },
         light: {
             bg: useColorModeValue('white', 'tertiary.700'),
@@ -36,6 +36,11 @@ const Card = chakra((props) => {
             ),
             boxShadow: useColorModeValue('undefined', 'undefined'),
         },
+        poolifyBackground:{
+            bg:'poolify.400',
+            boxShadow: useColorModeValue('lg', 'undefined'),
+            color:'white'
+        },
         none: {
             bg: 'undefined',
             boxShadow: 'undefined',
@@ -44,10 +49,17 @@ const Card = chakra((props) => {
 
     return (
         <Box
+            position={'relative'}
+            overflow={'hidden'}
             bg={
                 variant
                     ? themeColor[variant].bg
                     : themeColor['base'].bg
+            }
+            color={
+                variant
+                    ? themeColor[variant].color
+                    : undefined
             }
             boxShadow={
                 variant
@@ -57,6 +69,9 @@ const Card = chakra((props) => {
             borderRadius="6px"
             {...rest}
         >
+            {'poolifyBackground' == variant && (
+                <></>
+            )}
             {children}
         </Box>
     );

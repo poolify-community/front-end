@@ -1,5 +1,6 @@
 import { Divider, Flex, VStack,Box, useColorModeValue } from '@chakra-ui/react';
 const PageLayout = (props) => {
+    // 
     return (
         <VStack
             w="100%"
@@ -19,7 +20,7 @@ const PageLayout = (props) => {
                 justifyContent={{ base: 'space-between', '2xl': 'center' }}
                 position="relative"
             >
-                <VStack w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1200px' }}>
+                <VStack >
                     <Box
                         w={'full'}
                         rounded={'lg'}
