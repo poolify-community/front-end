@@ -2,7 +2,17 @@ export const buttonStyles = {
   components: {
     Button: {
       variants: {
-        "navbar":{
+        "poolify":{
+          backgroundColor:'poolify.400',
+          color:'white',
+          marginLeft:'2px',
+          marginRight:'2px',
+          _hover: {
+            backgroundColor:'poolify.600',
+            color:'white'
+          },
+        },
+        "poolify-transparent":{
           marginLeft:'2px',
           marginRight:'2px',
           _hover: {
@@ -10,13 +20,13 @@ export const buttonStyles = {
             color:'white'
           },
         },
-        "navbar-selected":{
-          backgroundColor:'poolify.400',
-          color:'white',
+        "poolify-reverse":{
+          backgroundColor:'white',
+          color:'poolify.400',
           marginLeft:'2px',
           marginRight:'2px',
           _hover: {
-            backgroundColor:'poolify.600',
+            backgroundColor:'gray.200',
             color:'white'
           },
         },

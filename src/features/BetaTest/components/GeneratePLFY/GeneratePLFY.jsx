@@ -73,19 +73,19 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
 
 
     return (
-        <Card>
+        <Card variant={'poolifyBackground'}>
             <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minW={'350px'} >
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                        <Heading size={'md'} color={'black'}> Request PLFY</Heading>
-                        <Text fontStyle={'italic'}>This is only for the TEST Net</Text>
+                        <Heading size={'md'} color={'white'}> Request PLFY</Heading>
+                        <Text fontStyle={'italic'}>« This is only for the TEST Net »</Text>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-between'} marginBottom={'8px'} marginTop={'30px'}>
                         <Spacer/>
                         <Flex alignItems={'center'}>
                             <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-end'}>
                             <Text style={styles.amountText}>
-                                10 000
+                                2 000
                             </Text>
                             <Text style={styles.amountLimitText}>
                                 (only 1 time / 6h)
@@ -95,7 +95,7 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
                         </Flex>
                     </Flex>
                     <Flex justifyContent={'center'} alignItems={'center'} flexDirection={'column'} mt={'5px'}>
-                        <Button colorScheme='blue' size='lg' height='40px' w={'100%'} 
+                        <Button variant="poolify-reverse" size='lg' height='40px' w={'100%'} 
                             disabled={displayRequestButton} 
                             onClick={claimPLFYForTesting}
                         >

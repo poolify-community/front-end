@@ -23,10 +23,10 @@ function BetaTest() {
           <Header
               title={
                   <>
-                      <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-evenly'} 
+                      <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
                         flexDirection={isOneLineMode?'row':'column'} 
                       >
-                          <Heading size={'3xl'} color={'black'}  mb="5px"> Beta Test </Heading>
+                          <Heading size={'3xl'} mb="5px"> Beta Test </Heading>
                           {/* <NetworksToggle></NetworksToggle> */}
                           <GeneratePLFY />
                       </Flex>

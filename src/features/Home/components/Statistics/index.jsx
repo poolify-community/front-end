@@ -8,7 +8,7 @@ const Statistics = () => {
     return (
         <Card padding="24px" variant={'none'} maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'}>
             <Flex  direction="column">
-                <Heading margin={'10px'} textAlign={'left'} color={'#304073'}>Statistics</Heading>
+                <Heading margin={'10px'} textAlign={'left'}>Statistics</Heading>
                 <Flex flexDirection={isOneLineMode?'row':'column'} alignItems={'center'} justifyContent={isOneLineMode?'center':'normal'}>
                     
                     <Card margin={'10px'} minWidth={'350px'}>

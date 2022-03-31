@@ -32,15 +32,14 @@ export default function NavbarDesktop({address,connected,connectWallet,disconnec
 
   const DisplayButtons = (routes) => {
     //console.log('DisplayButtons --> ');
-    let activeColor   = "poolify.400";
-    let inactiveColor = "inherit";
-
+    const defineVariant = x => activeRoute(x) === "active" ?'poolify':'poolify-transparent';
+    
     return routes.map((prop, key) => {
       let _url = prop.path + window.location.hash;
       return (
         <NavLink to={_url} key={key}>
           <Button key={key} 
-              variant={activeRoute(prop.path) === "active" ?'navbar-selected':'navbar'}
+              variant={defineVariant(prop.path)}
               leftIcon={prop.leftIcon} 
               fontSize={{sm:"xl",base:'sm'}}
           >
