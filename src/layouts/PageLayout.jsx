@@ -1,6 +1,6 @@
 import { Divider, Flex, VStack,Box, useColorModeValue } from '@chakra-ui/react';
 const PageLayout = (props) => {
-    // 
+    // w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1200px' }}
     return (
         <VStack
             w="100%"
@@ -8,8 +8,6 @@ const PageLayout = (props) => {
             spacing="0"
         >
             <Flex
-                pr={{ base: '10px', xlp1: '100px' }}
-                pl={{ base: '10px', xlp1: '100px' }}
                 h="100%"
                 overflowY="scroll"
                 css={{
@@ -25,15 +23,16 @@ const PageLayout = (props) => {
                         w={'full'}
                         rounded={'lg'}
                         p={6}
-                        mt={'50px'}
                         mb={'15px'}
                         textAlign={'center'}
                     >
                         {props.header}
 
-                        <Divider m="0 !important" />
 
-                        <Box mt={'10px'}>
+                        <Box mt={'10px'} 
+                             pr={{ base: '10px', xlp1: '100px' }}
+                             pl={{ base: '10px', xlp1: '100px' }}
+                        >
                             {props.body}
                         </Box>
                         

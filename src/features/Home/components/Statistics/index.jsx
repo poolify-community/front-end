@@ -6,7 +6,7 @@ const Statistics = () => {
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
 
     return (
-        <Card mt={'50px'} padding="24px" variant={'none'} maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'}>
+        <Card padding="24px" variant={'none'} maxWidth={'800px'} minWidth={isOneLineMode?'800px':'100%'}>
             <Flex  direction="column">
                 <Heading margin={'10px'} textAlign={'left'} color={'#304073'}>Statistics</Heading>
                 <Flex flexDirection={isOneLineMode?'row':'column'} alignItems={'center'} justifyContent={isOneLineMode?'center':'normal'}>

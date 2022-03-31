@@ -1,7 +1,7 @@
 import {
     chakra,Box,Flex,
     useColorModeValue,Img,
-    VisuallyHidden,
+    VisuallyHidden,Heading,
     HStack,Button,useDisclosure,IconButton,Spacer,
     Drawer,DrawerOverlay,DrawerCloseButton,DrawerHeader,DrawerBody,DrawerContent
   } from "@chakra-ui/react";
@@ -60,21 +60,20 @@ import {
           <Flex alignItems="center" justifyContent="space-between" mx="auto">
             <HStack spacing={4} display="flex" alignItems="center">
               <chakra.a
-                href={`${process.env.PUBLIC_URL}/#/`}
-                title="Choc Home Page"
+                href={`${process.env.PUBLIC_URL + window.location.hash}`}
+                title="Home page"
                 display="flex"
                 alignItems="center"
               >
                 <Img src="/assets/img/Poolify-Logo-Color.png" width='50px' height='50px' margin={'10px'} />
                 <VisuallyHidden>Poolify Finance</VisuallyHidden>
+                <Heading size={'lg'}>Poolify.<chakra.span fontSize={'1rem'}>Finance</chakra.span></Heading>
               </chakra.a>
-              <chakra.h1 fontSize="xl">Poolify Finance</chakra.h1>
             </HStack>
             <Box display={{ base: "inline-flex", md: "none" }}>
                 <IconButton
                   display={{ base: "flex", md: "none" }}
-                  aria-label="Open menu" fontSize="20px"
-                  color={'gray.800'} variant="ghost"
+                  aria-label="Open menu" fontSize="20px" variant="ghost"
                   icon={<AiOutlineMenu />}
                   onClick={onOpen}
                 />

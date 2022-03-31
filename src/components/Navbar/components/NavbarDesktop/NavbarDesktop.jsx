@@ -3,16 +3,11 @@ import {
   Box,
   Flex,
   useColorModeValue,
-  useColorMode,
   VisuallyHidden,
   HStack,
   Button,
   useDisclosure,
-  VStack,
-  IconButton,
-  CloseButton,
-  Spacer,
-  useBreakpointValue
+  Heading
 } from "@chakra-ui/react";
 import {
   AiOutlineMenu,
@@ -37,61 +32,24 @@ export default function NavbarDesktop({address,connected,connectWallet,disconnec
 
   const DisplayButtons = (routes) => {
     //console.log('DisplayButtons --> ');
-    let activeColor   = useColorModeValue("poolify.400", "white");
-    let inactiveColor = "black";
+    let activeColor   = "poolify.400";
+    let inactiveColor = "inherit";
 
     return routes.map((prop, key) => {
       let _url = prop.path + window.location.hash;
       return (
         <NavLink to={_url} key={key}>
           <Button key={key} 
-              variant="ghost" leftIcon={prop.leftIcon} fontSize={{sm:"xl",base:'sm'}}
-              color={activeRoute(prop.path) === "active" ?activeColor:inactiveColor}
-            >
+              variant={activeRoute(prop.path) === "active" ?'navbar-selected':'navbar'}
+              leftIcon={prop.leftIcon} 
+              fontSize={{sm:"xl",base:'sm'}}
+          >
               {prop.name}
           </Button>
         </NavLink>
       )
     })
   };
-  
-
-  
-  const DesktopUserMenu = (
-    <>
-      <Flex spacing={2} width={'450px'} alignItems={'center'}>
-        <NetworksToggle width={'300px'}></NetworksToggle>
-        <Account 
-          address={address}
-          connected={connected}
-          connectWallet={connectWallet}
-          disconnectWallet={disconnectWallet}
-        />
-      </Flex>
-    </>
-  )
-  const DesktopMenu = (
-    <> 
-      <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-        {DisplayButtons(props.routes)}
-      </HStack>
-    </>
-  )
-
-  const LogoAndTitle = (
-    <>
-      <chakra.a
-         href={`${process.env.PUBLIC_URL}/#/`}
-        title="Choc Home Page"
-        display="flex"
-        alignItems="center"
-      >
-        <img src="/assets/img/Poolify-Logo-Color.png" style={{width:'64px',height:'64px'}} />
-        <VisuallyHidden>Poolify Finance</VisuallyHidden>
-      </chakra.a>
-      <chakra.h1 fontSize="xl">Poolify Finance</chakra.h1>
-    </>
-  )
 
 
   return (
@@ -106,13 +64,32 @@ export default function NavbarDesktop({address,connected,connectWallet,disconnec
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <HStack spacing={4} display="flex" alignItems="center">
-            {LogoAndTitle}
+            <chakra.a
+              href={`${process.env.PUBLIC_URL + window.location.hash}`}
+              title="Home page"
+              display="flex"
+              alignItems="center"
+            >
+              <img src="/assets/img/Poolify-Logo-Color.png" style={{width:'64px',height:'64px'}} />
+              <VisuallyHidden>Poolify Finance</VisuallyHidden>
+              <Heading size={'lg'}>Poolify.<chakra.span fontSize={'1rem'}>Finance</chakra.span></Heading>
+            </chakra.a>
           </HStack>
           <HStack spacing={3} display="flex" alignItems="center">
-            {DesktopMenu}
+            <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
+              {DisplayButtons(props.routes)}
+            </HStack>
           </HStack>
           <HStack spacing={2} display="flex" alignItems="center">
-            {DesktopUserMenu}
+            <Flex spacing={2} width={'450px'} alignItems={'center'}>
+              <NetworksToggle width={'300px'}></NetworksToggle>
+              <Account 
+                address={address}
+                connected={connected}
+                connectWallet={connectWallet}
+                disconnectWallet={disconnectWallet}
+              />
+            </Flex>
           </HStack>
         </Flex>
       </chakra.header>

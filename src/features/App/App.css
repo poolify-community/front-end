@@ -205,10 +205,12 @@ code {
     transform: rotate(-45deg);
 }
 
+
 /** Connector modal **/
 .web3modal-modal-lightbox {
     z-index: 200 !important;
 }
+
 
 
 @font-face {

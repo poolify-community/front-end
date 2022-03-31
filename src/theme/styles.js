@@ -10,7 +10,8 @@ export const globalStyles = {
     },
     poolify:{
       200:'#73a8d5',
-      400:'#3a83c1'
+      400:'#3a83c1',
+      600:'#2b6cb0'
     }
   },
   size:{
@@ -21,11 +22,11 @@ export const globalStyles = {
     global: (props) => ({
       body: {
         fontFamily: 'Kanit, sans-serif',
-        color:'#1a1e2c',
+        color:'#304073',
       },
       html: {
         fontFamily: 'Kanit, sans-serif',
-        color:'#1a1e2c'
+        color:'#304073'
       }
     }),
   },

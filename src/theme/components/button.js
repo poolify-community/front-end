@@ -2,6 +2,24 @@ export const buttonStyles = {
   components: {
     Button: {
       variants: {
+        "navbar":{
+          marginLeft:'2px',
+          marginRight:'2px',
+          _hover: {
+            backgroundColor:'poolify.400',
+            color:'white'
+          },
+        },
+        "navbar-selected":{
+          backgroundColor:'poolify.400',
+          color:'white',
+          marginLeft:'2px',
+          marginRight:'2px',
+          _hover: {
+            backgroundColor:'poolify.600',
+            color:'white'
+          },
+        },
         "wallet-connection":{
           backgroundColor:'black',
           color:'white',
