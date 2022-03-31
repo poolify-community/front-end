@@ -71,9 +71,8 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
         .catch(error => DisplayNotification({ message:`Error : ${error}`,variant: 'error' }));
     }
 
-
     return (
-        <Card variant={'poolifyBackground'}>
+        <Card variant={'poolifyBackground'} maxWidth={'450px'} marginLeft={'auto'} marginRight={'auto'}>
             <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minW={'350px'} >
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>

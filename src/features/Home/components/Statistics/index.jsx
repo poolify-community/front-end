@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text,Button,Image, Link,useBreakpointValue } from '@chakra-ui/react';
 import Card from 'components/Card/Card';
+import SmartTag from 'components/SmartTag/SmartTag';
 
 
 const Statistics = () => {
@@ -12,7 +13,7 @@ const Statistics = () => {
                 <Flex flexDirection={isOneLineMode?'row':'column'} alignItems={'center'} justifyContent={isOneLineMode?'center':'normal'}>
                     
                     <Card margin={'10px'} minWidth={'350px'}>
-                        <span class="token-smartag">Live</span>
+                        <SmartTag variant="green">Live</SmartTag>
                         <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'}>
                             <Flex flexDirection={'column'} overflowY={'auto'}>
                                 <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'center'} >

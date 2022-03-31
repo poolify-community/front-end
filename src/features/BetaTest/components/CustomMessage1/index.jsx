@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text,Button,Image, Link } from '@chakra-ui/react';
 import Card from 'components/Card/Card';
+import SmartTag from 'components/SmartTag/SmartTag';
 
 
 const CustomMessage1 = () => {
@@ -28,7 +29,9 @@ const CustomMessage1 = () => {
                                     Time to test our protocol on the BSC Test
                                 </Heading>
                                 <Card padding={'24px'} mt={'20px'}>
+                                    <SmartTag  variant="red">Beta Test</SmartTag>
                                     <Heading
+                                        pl={'50px'}
                                         mt="20px"
                                         size={'md'}
                                     >

@@ -3,6 +3,7 @@ import { globalStyles } from "./styles";
 import { fonts } from "./foundations/fonts";
 import { breakpoints } from "./foundations/breakpoints";
 import { buttonStyles } from "./components/button";
+import { smartTagStyles } from "./components/smartTag";
 import { textStyles } from "./components/text";
 import { badgeStyles } from "./components/badge";
 import { linkStyles } from "./components/link";
@@ -21,6 +22,7 @@ export default extendTheme(
   globalStyles,
   fonts, // Global styles
   buttonStyles, // Button styles
+  smartTagStyles, // SmartTags
   textStyles, // Text Styles
   badgeStyles, // Badge styles
   linkStyles, // Link styles
