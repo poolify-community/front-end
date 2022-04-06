@@ -14,8 +14,8 @@ const Statistics = () => {
                     
                     <Card margin={'10px'} minWidth={'350px'}>
                         <SmartTag variant="green">Live</SmartTag>
-                        <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'}>
-                            <Flex flexDirection={'column'} overflowY={'auto'}>
+                        <Flex flexDirection={'column'} padding={'24px'}>
+                            <Flex flexDirection={'column'}>
                                 <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'center'} >
                                     <Heading size={'md'}> PLFY Price</Heading>
                                     <Heading size={'lg'} color={'poolify.400'}>0.0041 $</Heading>
@@ -25,8 +25,8 @@ const Statistics = () => {
                     </Card>
 
                     <Card margin={'10px'} minWidth={'350px'}>
-                            <Flex flexDirection={'column'} overflowY={'auto'} padding={'24px'} >
-                                <Flex flexDirection={'column'} overflowY={'auto'}>
+                            <Flex flexDirection={'column'}padding={'24px'} >
+                                <Flex flexDirection={'column'}>
                                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'center'}>
                                         <Heading size={'md'}> Ecosystem TVL</Heading>
                                         <Heading size={'lg'} color={'poolify.400'}>300,000.345 $</Heading>
