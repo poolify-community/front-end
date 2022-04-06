@@ -47,6 +47,7 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
       <Card
         {...props}
         position="relative"
+        overflow={'inherit'}
         border={'0'}
         borderColor={'secondary.300'}
       >

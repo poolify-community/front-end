@@ -55,7 +55,7 @@ export default function VaultList({vaults,tokens,apys,pendingPLFY,fetchBalancesD
       return (
             <Accordion  allowMultiple={true} allowToggle={true} width={'inherit'}>
                 <Flex margin="20px" justifyItems={'center'} justifyContent={'space-between'}>
-                    <Heading size={'xl'} color={'black'}> Poolify Core </Heading>
+                    <Heading size={'xl'}> Poolify Core </Heading>
                 </Flex>
                 {coreVaults.length > 0 ? (
                     coreVaults.map((vault, i) => (
@@ -81,7 +81,7 @@ export default function VaultList({vaults,tokens,apys,pendingPLFY,fetchBalancesD
                 )}
 
                 <Flex margin="20px" justifyItems={'center'} justifyContent={'space-between'}>
-                    <Heading size={'xl'} color={'black'}> Partners </Heading>
+                    <Heading size={'xl'}> Partners </Heading>
                 </Flex>
                 {partnerVaults.length > 0 ? (
                     partnerVaults.map((vault, i) => (

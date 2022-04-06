@@ -78,7 +78,7 @@ const VaultsComponent = function() {
                     <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
                       flexDirection={isOneLineMode?'row':'column'}
                     >
-                        <Heading size={'3xl'} color={'black'} mb="5px"> Vaults </Heading>
+                        <Heading size={'3xl'}  mb="15px"> Vaults </Heading>
                         {/* <NetworksToggle></NetworksToggle> */}
                         <AllRewards tokens={tokens} vaults={pools} pendingPLFY={pendingPLFY} fetchPendingPLFYDone={fetchPendingPLFYDone}/>
                     </Flex>
