@@ -1,6 +1,6 @@
 import {
     Box,Text,Link,VStack,Code,Grid,HStack,Heading,Flex,
-    useColorModeValue
+    useColorModeValue,SimpleGrid
   } from '@chakra-ui/react';
 import { useBreakpointValue } from '@chakra-ui/media-query';
 
@@ -13,6 +13,7 @@ import Statistics from 'features/Home/components/Statistics';
 import Protocol from 'features/Home/components/Protocol';
 import RoadMap from 'features/Home/components/RoadMap';
 import Card from 'components/Card/Card';
+import CustomCard from 'components/CustomCard/CustomCard';
 
 //#fbfbfd
 //
@@ -38,7 +39,11 @@ function Home() {
           />
         }
         body={
-          <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+          <Flex maxWidth={'1200px'}
+            flexDirection={isOneLineMode?'row':'column'} alignItems={isOneLineMode?'flex-start':'center'}
+            justifyContent={'center'} 
+          >
+            
             <Statistics />
             <RoadMap />
           </Flex>

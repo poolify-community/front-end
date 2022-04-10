@@ -3,12 +3,11 @@ export const smartTagStyles = {
         SmartTag: {
             variants: {
                 "red":{
-                    position: 'absolute',
+                    position: 'absolute !important',
                     color: '#fff',
                     textTransform: 'uppercase',
                     bg: '#d23f00',
                     lineHeight: '20px',
-                    fontSize: '13px',
                     fontWeight: '700',
                     padding: '7px 30px',
                     minWidth: '200px',
@@ -23,7 +22,6 @@ export const smartTagStyles = {
                     textTransform: 'uppercase',
                     bg: '#00d285',
                     lineHeight: '20px',
-                    fontSize: '13px',
                     fontWeight: '700',
                     padding: '7px 30px',
                     minWidth: '200px',

@@ -15,8 +15,8 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgb(244, 244, 244)",
     cursor: "pointer",
+    fontWeight:"bold",
     borderRadius : "0.75rem"
   },
   connector: {
@@ -51,11 +51,10 @@ function Account({address,connected,connectWallet,disconnectWallet}) {
   if (!connected || !address) {
     return (
       <>
-        <Button style={styles.connector} onClick={connectWallet} bg={'gray.100'} w={'100%'} m={'5px'} mt={isOneLineMode?'':'10px'}>
+        <Button style={styles.connector} onClick={connectWallet} variant={'poolify'} w={'100%'} m={'5px'} mt={isOneLineMode?'':'10px'}>
           <Text
-              variant="caption-bold"
+              variant={'caption-bold'}
               fontWeight={'bold'}
-              flexShrink={0}
           > Authenticate </Text>
         </Button>
       </>
@@ -145,8 +144,8 @@ function Account({address,connected,connectWallet,disconnectWallet}) {
   )
 
   return (
-    <Box style={styles.account}  bg={'gray.100'} w={'100%'} m={'5px'} mt={isOneLineMode?'':'10px'} onClick={disconnectWallet}>
-      <Text mr={'5px'} color={_accountTextColor}>
+    <Box style={styles.account} w={'100%'} m={'5px'} mt={isOneLineMode?'':'10px'} onClick={disconnectWallet}>
+      <Text mr={'5px'}>
         {getEllipsisTxt(address, 6)}
       </Text>
       <Blockie currentWallet scale={3} />

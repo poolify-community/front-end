@@ -6,7 +6,7 @@ const Statistics = () => {
     const isOneLineMode = useBreakpointValue({ base: false, xl: true });
 
     return (
-        <Flex maxWidth={'800px'} flexDirection={'column'} textAlign={'left'}
+        <Flex maxWidth={'1100px'} flexDirection={'column'} textAlign={'left'}
                 alignContent={'flex-start'} alignItems={'flex-start'} color={'white'}
         >
             <Heading size={'md'} fontWeight={'bold'}> Poolify Finance</Heading>

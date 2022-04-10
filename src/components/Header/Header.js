@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 const Header = (props) => {
     return (
-        <Flex p="30px 0 24px" direction="row" w="100%">
-            <Stack flexGrow={1}>
+        <Flex p="30px 0px" direction="row" w="100%" justifyContent={'center'}>
+            <Stack width={'inherit'}>
                 {typeof props.title === 'string' ? (
                     <Heading level="3">{props.title}</Heading>
                 ) : (

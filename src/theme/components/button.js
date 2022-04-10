@@ -16,8 +16,7 @@ export const buttonStyles = {
           marginLeft:'2px',
           marginRight:'2px',
           _hover: {
-            backgroundColor:'poolify.400',
-            color:'white'
+            color:'poolify.400'
           },
         },
         "poolify-reverse":{
@@ -31,12 +30,17 @@ export const buttonStyles = {
           },
         },
         "wallet-connection":{
-          backgroundColor:'black',
-          color:'white',
+          backgroundColor:'transparent',
+          border:'1px solid white',
+          color:'poolify.600',
           marginLeft:'2px',
           marginRight:'2px',
           _hover: {
             backgroundColor:'poolify.600',
+            color:'white',
+            borderColor:'poolify.600',
+            borderStyle:'solid',
+            borderWidth:'1px',
           },
         },
         "poolify-slider":{
@@ -73,7 +77,8 @@ export const buttonStyles = {
         },
       },
       baseStyle: {
-        borderRadius: ".75rem",
+        borderRadius: "4px",
+        transition: "all .2s ease-in-out",
         margin:"5px",
         _focus: {
           boxShadow: "none",

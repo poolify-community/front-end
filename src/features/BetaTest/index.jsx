@@ -23,8 +23,8 @@ function BetaTest() {
           <Header
               title={
                   <>
-                      <Flex spacing="20px" justifyContent={'space-between'} 
-                        flexDirection={isOneLineMode?'row':'column'} 
+                      <Flex spacing="20px" justifyContent={'space-between'} width={'inherit'}
+                        flexDirection={isOneLineMode?'row':'column'}
                       >
                           <Heading size={'3xl'} mb="15px" textAlign={'left'}> Beta Test </Heading>
                           {/* <NetworksToggle></NetworksToggle> */}
@@ -36,7 +36,7 @@ function BetaTest() {
           />
         }
         body={
-          <Stack w="100%">
+          <Stack w="100%" maxWidth={'1200px'}>
               {/* <Filters /> */}
               <Box h="10px" />
               <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>

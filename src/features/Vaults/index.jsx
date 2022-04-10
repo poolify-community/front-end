@@ -75,7 +75,7 @@ const VaultsComponent = function() {
         <Header
             title={
                 <>
-                    <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} 
+                    <Flex spacing="20px" justifyItems={'center'} justifyContent={'space-between'} width={'inherit'}
                       flexDirection={isOneLineMode?'row':'column'}
                     >
                         <Heading size={'3xl'}  mb="15px"> Vaults </Heading>

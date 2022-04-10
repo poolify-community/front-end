@@ -43,7 +43,6 @@ export const CustomTag = (props) => {
             fontSize="12px"
             lineHeight="15px"
             fontWeight="600"
-            fontFamily="Montserrat"
             {...rest}
         >
             <HStack>

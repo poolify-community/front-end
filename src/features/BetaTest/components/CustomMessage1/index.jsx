@@ -1,12 +1,12 @@
 import { Box, Flex, Heading, Text,Button,Image, Link } from '@chakra-ui/react';
-import Card from 'components/Card/Card';
+import CustomCard from 'components/CustomCard/CustomCard';
 import SmartTag from 'components/SmartTag/SmartTag';
 
 
 const CustomMessage1 = () => {
 
     return (
-        <Card mt={'10px'} variant={'none'} maxWidth={'800px'}>
+        <CustomCard mt={'10px'} variant={'none'} maxWidth={'800px'}>
             <Flex w="100%" direction="column">
                 <Heading margin={'10px'} textAlign={'left'}>Instructions</Heading>
                 <Flex w="100%" overflow="hidden">
@@ -28,8 +28,8 @@ const CustomMessage1 = () => {
                                 >
                                     Time to test our protocol on the BSC Test
                                 </Heading>
-                                <Card padding={'24px'} mt={'20px'}>
-                                    <SmartTag  variant="red">Beta Test</SmartTag>
+                                <CustomCard className='bg-white' padding={'24px'} mt={'20px'} SmartTag={<SmartTag variant="red">Beta Test</SmartTag>}>
+                                    
                                     <Heading
                                         pl={'50px'}
                                         mt="20px"
@@ -60,9 +60,9 @@ const CustomMessage1 = () => {
                                                 window.open('https://medium.com/@poolify.finance/poolify-betatest-protocol-f48021a5e543');
                                             }}>Go to Medium</Button>
                                     </Flex>
-                                </Card>
+                                </CustomCard>
 
-                                <Card padding={'24px'} mt={'20px'}>
+                                <CustomCard className='bg-white' padding={'24px'} mt={'20px'}>
                                     <Heading
                                         mt="20px"
                                         size={'md'}
@@ -77,14 +77,14 @@ const CustomMessage1 = () => {
                                     >
                                         For feedback, please try to reach us on discord.
                                     </Text>
-                                </Card>
+                                </CustomCard>
                             
                             </Flex>
                         </Flex>
                     </Box>
                 </Flex>
             </Flex>
-        </Card>
+        </CustomCard>
     );
 };
 

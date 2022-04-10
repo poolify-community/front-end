@@ -16,7 +16,7 @@ import {
   
   
   export default function NavbarMobile({address,connected,connectWallet,disconnectWallet,...props}) {
-    const bg = useColorModeValue("white", "gray.800");
+    const {sx, ...rest} = props;
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
 
@@ -32,12 +32,13 @@ import {
     const DisplayButtons = (routes) => {
       //console.log('DisplayButtons --> ');
       let activeColor   = useColorModeValue("poolify.400", "white");
-      let inactiveColor = "black";
+      let inactiveColor = "white";
   
       return routes.map((prop, key) => {
         return (
           <NavLink to={prop.path} key={key}>
             <Button key={key} 
+                _hover={{color:'white',background:'poolify.400'}}
                 variant="ghost" leftIcon={prop.leftIcon} fontSize={{sm:"xl",base:'sm'}}
                 color={activeRoute(prop.path) === "active" ?activeColor:inactiveColor}
                 onClick={onClose}
@@ -52,7 +53,7 @@ import {
     return (
       <Box shadow="md" w={'100%'}>
         <chakra.header
-          bg={bg}
+          sx={sx}
           borderColor="black"
           borderBottomWidth={1}
           w="full" 
@@ -91,8 +92,8 @@ import {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Poolify Finance</DrawerHeader>
-          <DrawerBody>
+          <DrawerHeader bg={'dark'}>Poolify Finance</DrawerHeader>
+          <DrawerBody bg={'dark'}>
             <Flex width={'100%'} flexDirection={'column'}>
               <Flex width={'100%'} padding={'8px'} flexDirection={'column'}>
                 <NetworksToggle></NetworksToggle>

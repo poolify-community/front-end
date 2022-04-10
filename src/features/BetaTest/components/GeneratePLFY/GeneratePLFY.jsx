@@ -9,7 +9,7 @@ import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
 import React,{useEffect,useState} from 'react';
 
-import Card from 'components/Card/Card';
+import CustomCard from 'components/CustomCard/CustomCard';
 import {getIconElement,getLPElement} from 'libs/helpers/tokens';
 import { useConnectWallet, useDisconnectWallet } from 'libs/hooks/useConnector';
 import {useNotifier} from 'libs/helpers/notifier';
@@ -72,7 +72,7 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
     }
 
     return (
-        <Card variant={'poolifyBackground'} maxWidth={'450px'} marginLeft={'auto'} marginRight={'auto'}>
+        <CustomCard variant={'poolifyBackground'} maxWidth={'450px'}>
             <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minW={'350px'} >
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
@@ -103,7 +103,7 @@ const GeneratePLFY = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,..
                     </Flex>
                 </Flex>
             </Flex>
-        </Card>
+        </CustomCard>
     )
 }
 

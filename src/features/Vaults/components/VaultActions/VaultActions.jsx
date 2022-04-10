@@ -6,6 +6,7 @@ import {
     useBreakpointValue,
     Tabs,Tab,TabList,TabPanels,TabPanel,
 } from "@chakra-ui/react";
+import CustomCard from "components/CustomCard/CustomCard";
 import { useTranslation } from 'react-i18next';
 import Deposit from './Deposit/Deposit';
 import Withdraw from "./Withdraw/Withdraw";
@@ -16,9 +17,7 @@ const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
     const { t } = useTranslation();
 
     return (
-        <Box
-            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
-            borderRadius={{sm:'0px',base:'16px'}}
+        <CustomCard
             spacing="10px" flexShrink={0} ml={{'sm':'0px','base':'32px'}} mr={'0px'} 
             justifyContent="space-between" 
             {...props}
@@ -45,7 +44,7 @@ const MobileVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) =
                     </TabPanel>
                 </TabPanels>
             </Tabs>
-        </Box>
+        </CustomCard>
     )
 }
 
@@ -55,22 +54,18 @@ const DesktopVersion = ({ vault, balanceSingle, index, sharesBalance,...props}) 
     return (
         <>
         
-        <Box
-            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
-            borderRadius={{base:'0px',md:'16px'}}
+        <CustomCard
             spacing="10px"  ml={{base:'0px',md:'20px'}} mr={'0px'} 
             justifyContent="space-between" 
         >
             <Deposit index={index} vault={vault}/>
-        </Box>
-        <Box
-            border={"2px solid"} borderColor={'rgb(238, 234, 244)'}
-            borderRadius={{base:'0px',md:'16px'}}
+        </CustomCard>
+        <CustomCard
             spacing="10px"  ml={{base:'0px',md:'20px'}} mr={{base:'0px',md:'20px'}} 
             justifyContent="space-between" 
         >
             <Withdraw index={index} vault={vault} sharesBalance={sharesBalance}/>
-        </Box>
+        </CustomCard>
         </>
     )
 }

@@ -1,4 +1,4 @@
 export const fonts = {
-    heading : '"SF Pro Text","Helvetica Neue","Helvetica","Arial",sans-serif',
-    body: '"SF Pro Text","Helvetica Neue","Helvetica","Arial",sans-serif'
+    heading : 'Chakra Petch, Kanit, sans-serif',
+    body: 'Chakra Petch, Kanit, sans-serif'
 };

@@ -57,7 +57,11 @@ const NetworksToggle = memo(function ({width}) {
     <Menu>
       {({ isOpen }) => (
         <>
-          <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} w={isOneLineMode?width:'100%'} height={'42px'} bg={'gray.100'}>
+          <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />} 
+            w={isOneLineMode?width:'100%'} height={'42px'} bg={'transparent'}
+            _hover={{ bg: 'poolify.400'}}
+            _expanded={{ bg: 'poolify.400'}}
+          >
             {isOpen ? 'Select Network' : (
               <Flex alignItems={'center'}>
                 <Img src={getSingleAssetSrc(currentNetwork.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
@@ -65,9 +69,9 @@ const NetworksToggle = memo(function ({width}) {
               </Flex>
             )}
           </MenuButton>
-          <MenuList >
+          <MenuList bg={'dark'} borderColor={'dark'}>
             {allNetworks.map((network, key) => (
-              <MenuItem onClick={() => handleNetworkClick(network)} key={key}>
+              <MenuItem onClick={() => handleNetworkClick(network)} key={key} _hover={{bg:'poolify.400'}} _focus={{bg:'poolify.400'}}>
                 <Img src={getSingleAssetSrc(network.asset).default} alt={`${currentNetwork.name}`} style={styles.icon} />
                 <Text ml={'10px'}>{network.name}</Text>
               </MenuItem>

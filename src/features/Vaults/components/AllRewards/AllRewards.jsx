@@ -9,7 +9,7 @@ import BigNumber from 'bignumber.js';
 import { useTranslation } from 'react-i18next';
 import React,{useEffect,useState} from 'react';
 
-import Card from 'components/Card/Card';
+import CustomCard from 'components/CustomCard/CustomCard';
 import {getIconElement,getLPElement} from 'libs/helpers/tokens';
 import { fetchPrice } from 'libs/web3';
 import { useFetchHarvestAll } from 'features/Vaults/redux/hooks';
@@ -80,11 +80,11 @@ const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...p
 
 
     return (
-        <Card>
+        <CustomCard>
             <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'} padding={'24px'} minWidth={'350px'}>
                 <Flex flexDirection={'column'} maxHeight={'90vh'} overflowY={'auto'}>
                     <Flex justifyContent={'space-between'} flexDirection={'column'} alignItems={'flex-start'}>
-                        <Heading size={'md'} color={'black'}> Claim PLFY Bounty</Heading>
+                        <Heading size={'md'}> Claim PLFY Bounty</Heading>
                         <Text>for community harvesting</Text>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-between'} marginBottom={'8px'} marginTop={'30px'}>
@@ -108,7 +108,7 @@ const AllRewards = function({tokens,vaults,pendingPLFY,fetchPendingPLFYDone,...p
                     </Flex>
                 </Flex>
             </Flex>
-        </Card>
+        </CustomCard>
     )
 }
 

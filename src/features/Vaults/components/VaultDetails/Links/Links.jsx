@@ -23,19 +23,18 @@ const Links = function({vault,links}){
     return (
         <Flex flexBasis={{base:'unset',md:'230px'}} alignItems={'flex-start'} justifyContent={'flex-start'} h='inherit' paddingBottom={'50px'}>
                 <Flex marginLeft={'15px'} flexDirection={'column'} alignItems={'flex-start'}>
-                    <Link href={vault.vaultExplorer} isExternal variant={'poolify-links'}>
+                    <Link href={vault.vaultExplorer} isExternal variant={'poolify-links-white'}>
                         See contract <ExternalLinkIcon mx='2px' />
                     </Link>
-                    <Link href={vault.buyTokenUrl} isExternal variant={'poolify-links'}>
+                    <Link href={vault.buyTokenUrl} isExternal variant={'poolify-links-white'}>
                         Buy Token <ExternalLinkIcon mx='2px' />
                     </Link>
-                    <Link isExternal variant={'poolify-links'} onClick={addToMetamask}>
+                    <Link isExternal variant={'poolify-links-white'} onClick={addToMetamask}>
                         Add to metamask <MetamaskIcon/>
                     </Link>
                     
                     <Box    
                         borderRadius={'16px'} mt={'5px'}
-                        color={useColorModeValue('poolify.400', 'poolify.400')}
                         w={'fit-content'}
                         padding={'0px 6px'}
                         alignItems={'center'}

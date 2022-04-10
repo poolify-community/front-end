@@ -4,10 +4,12 @@ import { fonts } from "./foundations/fonts";
 import { breakpoints } from "./foundations/breakpoints";
 import { buttonStyles } from "./components/button";
 import { smartTagStyles } from "./components/smartTag";
+import { cardTagStyles } from "./components/cardTag";
 import { textStyles } from "./components/text";
 import { badgeStyles } from "./components/badge";
 import { linkStyles } from "./components/link";
 import { drawerStyles } from "./components/drawer";
+import { navbarStyles } from "./components/navbar";
 import { CardComponent } from "./additions/card/Card";
 import { CardBodyComponent } from "./additions/card/CardBody";
 import { CardHeaderComponent } from "./additions/card/CardHeader";
@@ -19,14 +21,16 @@ import { PanelContainerComponent } from "./additions/layout/PanelContainer";
 
 export default extendTheme(
   { breakpoints }, // Breakpoints
-  globalStyles,
-  fonts, // Global styles
+  globalStyles, // Global styles
+  { fonts }, // Fonts
   buttonStyles, // Button styles
   smartTagStyles, // SmartTags
   textStyles, // Text Styles
   badgeStyles, // Badge styles
   linkStyles, // Link styles
   drawerStyles, // Sidebar variant for Chakra's drawer
+  navbarStyles, // Navbar Style component
+  cardTagStyles, // Card Tag component
   CardComponent, // Card component
   CardBodyComponent, // Card Body component
   CardHeaderComponent, // Card Header component

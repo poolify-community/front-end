@@ -7,7 +7,7 @@ import {
   HStack,
   Button,
   useDisclosure,
-  Heading
+  Heading,
 } from "@chakra-ui/react";
 import {
   AiOutlineMenu,
@@ -18,6 +18,7 @@ import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
 
 
 export default function NavbarDesktop({address,connected,connectWallet,disconnectWallet,...props}) {
+  const {sx, ...rest} = props;
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
 
@@ -54,8 +55,7 @@ export default function NavbarDesktop({address,connected,connectWallet,disconnec
   return (
     <Box shadow="md" w={'100%'}>
       <chakra.header
-        bg={bg}
-        borderColor="black"
+        sx={sx}
         borderBottomWidth={1}
         w="full"
         px={{ base: 2, sm: 4 }}

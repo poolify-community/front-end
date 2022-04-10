@@ -3,6 +3,9 @@ import { mode } from "@chakra-ui/theme-tools";
 export const globalStyles = {
   colors: {
     black:'#1d1d1f',
+    dark:'#1d2835f2',
+    warning:'#ff9f0c',
+    information:'#4e9cff',
     gray: {
       100:'rgb(244, 244, 244)',
       200:'#e2e8f0',
@@ -22,12 +25,14 @@ export const globalStyles = {
   styles: {
     global: (props) => ({
       body: {
-        fontFamily: 'Kanit, sans-serif',
-        color:'#304073',
+        fontFamily: 'Chakra Petch, Kanit, sans-serif',
+        //color:'#304073',
+        color:'#FFF'
       },
       html: {
-        fontFamily: 'Kanit, sans-serif',
-        color:'#304073'
+        fontFamily: 'Chakra Petch, Kanit, sans-serif',
+        //color:'#304073'
+        color:'#FFF'
       }
     }),
   },

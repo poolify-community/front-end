@@ -9,7 +9,7 @@ import {
 import { useBreakpointValue } from '@chakra-ui/media-query';
 
 
-import Card from 'components/Card/Card';
+import CustomCard from 'components/CustomCard/CustomCard';
 import CardTagContainer from 'components/CardTag/CardTagContainer';
 import CardTag from 'components/CardTag/CardTag';
 
@@ -44,7 +44,7 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
 
 
     return (
-      <Card
+      <CustomCard
         {...props}
         position="relative"
         overflow={'inherit'}
@@ -53,11 +53,11 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
       >
         <CardTagContainer>
             {address && vault.isPoolifyStaking && !vault.depositsPaused && (
-                <CardTag variant="blue" text="AUTO STAKE" />
+                <CardTag variant="information" text="AUTO STAKE" />
             )}
 
             {address && vault.depositsPaused && (
-                <CardTag variant="orange" text="Paused vault" />
+                <CardTag variant="warning" text="Paused vault" />
             )}
         </CardTagContainer>
 
@@ -104,7 +104,7 @@ export default function Vault({vault,tokens,apys,fetchBalancesDone,fetchVaultsDa
               </AccordionPanel>
             )}
         </AccordionItem>
-      </Card>
+      </CustomCard>
   );
 }
   

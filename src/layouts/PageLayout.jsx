@@ -20,7 +20,7 @@ const PageLayout = (props) => {
             >
                 <VStack >
                     <Box
-                        w={'full'}
+                        w={{ sm:'100VW', base: '750px', lg:'960px',xl: '1200px' }}
                         rounded={'lg'}
                         p={6}
                         mb={'15px'}
