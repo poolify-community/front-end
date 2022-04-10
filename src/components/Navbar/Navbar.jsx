@@ -6,18 +6,19 @@ export default function Navbar({routes,address,connected,connectWallet,disconnec
   const { size,children, variant, ...rest } = props;
   const isOneLineMode = useBreakpointValue({ base: false, xl: true });
   
+  const _sx = useStyleConfig('Navbar', { size, variant });
 
   return (
     <>
       {isOneLineMode?
-      <NavbarDesktop sx={useStyleConfig('Navbar', { size, variant })}
+      <NavbarDesktop sx={_sx}
         routes={routes} 
         address={address}
         connected={connected}
         connectWallet={connectWallet}
         disconnectWallet={disconnectWallet}/>
         :
-      <NavbarMobile sx={useStyleConfig('Navbar', { size, variant })}
+      <NavbarMobile sx={_sx}
         routes={routes} 
         address={address}
         connected={connected}
